@@ -1,0 +1,141 @@
+\input{preamble_ask.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\pagestyle{vangelis}
+
+\begin{document}
+
+
+
+\begin{center}
+  \minibox{\large\bfseries\textcolor{Col1}{Πραγματικοί Αριθμοί}}
+\end{center}
+
+\vspace{\baselineskip}
+
+
+\begin{lem}\label{lem:ineqs}
+  Έστω $ x,y >0 $ και $ n \in \mathbb{N} $. Τότε
+  \begin{enumerate*}[(i)]
+    \item $ x \leq y \Leftrightarrow x^{n} \leq y^{n} $
+    \item $ x < y \Leftrightarrow x^{n} < y^{n} $ \label{lem:ineqreal2}
+    \item $ x = y \Leftrightarrow x^{n} = y^{n} $ \label{lem:ineqreal3}
+  \end{enumerate*}
+\end{lem}
+
+\begin{mybox2}
+\begin{thm}[Ύπαρξη $ \mathbf{\sqrt{2}} $]
+  Υπάρχει μοναδικός θετικός αριθμός $ x \in \mathbb{R} $ τέτοιος ώστε $ x^{2}=2 $.
+\end{thm}
+\end{mybox2}
+\begin{proof}
+\item {}
+  Έστω $ A = \{ a \in \mathbb{R} \; : \; a > 0, a^{2} < 2 \}  $. Έχουμε $ 1 \in A 
+  \Rightarrow A \neq \emptyset $ 
+  και αν $ a \in A \Rightarrow a^{2} < 2 \Rightarrow a^{2} < 4
+  \overset{\ref{lem:ineqreal2}}{\Rightarrow} a <2,\; \forall a \in A $, 
+  άρα το 2 είναι άνω φράγμα του $A$. Άρα υπάρχει το supremum του Α, έστω 
+  $ x = \sup A $. 
+
+  Θα δείξουμε ότι $ x > 0 $ και $ x^{2} = 2 $
+
+  Πράγματι, $ 1 \in A \Rightarrow 1 \leq x $, γιατί $x$ α.φ.\ του $A$, οπότε $ x >0 $.
+
+  Θα δείξουμε ότι $ x^{2} = 2 $ αποκλείοντας τις περιπτώσεις $ x^{2} <2 $ και 
+  $ x^{2} > 2 $.
+  \begin{myitemize}
+    \item Έστω $ x^{2} > 2 $. Επιλέγω $ \varepsilon = \frac{1}{2} \min \{ x, 
+      \frac{x^{2}-2}{2x}\} $.
+
+      Καταρχάς $ \varepsilon > 0 $, γιατί $ x>0 $ και $ x^{2} -2 >0 $. 
+
+      Επίσης από ορισμό του $ \varepsilon $ έχουμε ότι  $\varepsilon < x $ και 
+      $ \varepsilon < \frac{x^{2}-2}{2x}$. 
+
+      Άρα $ \varepsilon < \frac{x^{2}-2}{2x} \Rightarrow 
+      2x \varepsilon < x^{2} - 2 \Leftrightarrow 2 < x^{2} -2x \varepsilon 
+      \overset{\varepsilon ^{2}>0}{\leq}
+      x^{2} -2x \varepsilon + \varepsilon ^{2} \Rightarrow 2 
+      < (x- \varepsilon )^{2}   $
+
+      Έστω $ a \in A \Rightarrow a^{2} <2 \Rightarrow a^{2}<2< 
+      (x- \varepsilon )^{2} \Rightarrow a^{2}< (x- \varepsilon )^{2} 
+      \Rightarrow a < x- \varepsilon, \; \forall a \in A$, 
+      άρα $ x - \varepsilon $ α.φ.\ του $A$, άτοπο, γιατί $ x= \sup A $.
+
+    \item Έστω $ x^{2}<2 $. Ομοίως.
+
+      Οπότε $ x^{2}=2 $. 
+
+      Τέλος, για να αποδείξουμε τη μοναδικότητα, έχουμε:
+
+      Έστω ότι υπάρχουν $ 2 $ αριθμοί, έστω $ x,y $ τέτοιοι ώστε $ x^{2} =2 $ 
+      και $ y^{2}=2 $. Τότε $ x^{2}=y^{2} \overset{\ref{lem:ineqreal3}}
+      {\Rightarrow} x =y $.
+  \end{myitemize}
+\end{proof}
+
+\begin{mybox2}
+\begin{thm}[Ύπαρξη ν-οστής ρίζας]
+  Για κάθε $ x_{0} >0 $ και για κάθε $ n \in \mathbb{N} $ υπάρχει μοναδικός, θετικός 
+  πραγματικός αριθμός $ p $, τέτοιος ώστε $ p^{n}= x_{0} $.
+\end{thm}
+\end{mybox2}
+
+\begin{cor}\label{cor:ineqs}
+  Έστω $ x,y >0 $ και $ n \in \mathbb{N} $. Τότε
+  \begin{enumerate}[label=(\roman*),itemjoin=\hspace{1cm}]
+    \item $ x \leq y \Leftrightarrow x^{\frac{1}{n}} \leq y^{\frac{1}{n}} $
+    \item $ x <y \Leftrightarrow x^{\frac{1}{n}} < y^{\frac{1}{n}} $
+    \item $ x =y \Leftrightarrow x^{\frac{1}{n}} = y^{\frac{1}{n}} $
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+\item {}
+  Αν $ x,y>0 $, τότε από το θεώρημα ύπαρξης $n$-οστής ρίζας υπάρχουν $ \tilde{x}  
+  = x^{\frac{1}{n}} $ και $ \tilde{y} =y^{\frac{1}{n}} $, οπότε από το 
+  λήμμα~\ref{lem:ineqs} έχουμε $ \tilde{x} \leq \tilde{y}  \Leftrightarrow 
+  \tilde{x} ^{n} \leq \tilde{y} ^{n} $,
+  οπότε $ x^{\frac{1}{n}} \leq y^{\frac{1}{n}} \Leftrightarrow x \leq y $.
+\end{proof}
+
+\begin{lem}\label{lem:ineqq}
+  Έστω $ x,y \geq 0 $ με $ x<y $ και $ q \in \mathbb{Q}, \; q >0 $. 
+  Τότε: $ x^{q} <y^{q} $
+\end{lem}
+
+\begin{proof}
+\item {}
+  Έστω $ p \in \mathbb{Q} $. Τότε υπάρχουν $ n,m \in \mathbb{N} $, τέτοιοι ώστε 
+  $ q = \frac{n}{m} $. Τότε 
+
+  \[ x<y \overset{\ref{cor:ineqs}}{\Rightarrow} x^{\frac{1}{m}} 
+    < y^{\frac{1}{m}} \overset{\ref{lem:ineqs}}{\Rightarrow} 
+  x^{\frac{n}{m}} < y^{\frac{n}{m}} \Rightarrow x^{q} < y^{q}  \] 
+\end{proof}
+
+\begin{lem}
+  Έστω $ a > 0 $ και $ q_{1}, q_{2} \in \mathbb{Q} $ με $ q_{1} < q_{2} $. 
+  \begin{enumerate}[(i)]
+    \item $ a>1 \Rightarrow a^{q_{1}} < a^{q_{2}} $
+    \item $ a<1 \Rightarrow a^{q_{1}} > a^{q_{2}} $
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+\item {}
+  \begin{enumerate}[(i)]
+    \item  $ a>1 \overset{\ref{lem:ineqq}}{\Rightarrow} 
+      a^{q_{2}- q_{1}} > 1^{q_{2} - q_{1}} \overset{a^{q_{1}}>0}{\Rightarrow} 
+      a^{q_{2}} > a^{q_{1} } $
+
+    \item $ a<1 \Rightarrow \frac{1}{a} >1 \Rightarrow 
+      (\frac{1}{a} )^{q_{1}} < (\frac{1}{a} )^{q_{2} } \Rightarrow a^{q_{1}} 
+      > a^{q_{2}} $
+  \end{enumerate}
+\end{proof}
+
+\end{document}

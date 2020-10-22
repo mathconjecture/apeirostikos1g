@@ -1,0 +1,63 @@
+%todo να μπουν σε κατάλληλες θέσεις στο chapter2
+\begin{mypropbox}
+  Έστω $ (a_{n})_{n \in \mathbb{N}} $ ακολουθία, και έστω $ a \in \mathbb{R} $, ώστε:
+  \vspace{\baselineskip}
+  \begin{minipage}{0.3\textwidth}
+    \begin{enumerate}[(i)]
+      \item $ 0 \leq a < a_{n}, \; \forall n \in \mathbb{N} $ \hfill \tikzmark{a}
+      \item $ \lim_{n \to +\infty} a_{n} = 0 $ \hfill \tikzmark{b}
+    \end{enumerate}
+    \mybrace{a}{b}[$ a = 0 $]
+  \end{minipage}
+\end{mypropbox}
+
+\begin{mypropbox}
+  Έστω $ A \subseteq \mathbb{R} $, $ A \neq \emptyset $ και άνω φραγμένο. 
+  Έστω $ s $ α.φ.\ του $A$. Τότε 
+  \[
+    s = \sup A \Leftrightarrow \forall n \in \mathbb{N} \; \exists a_{n} \in A
+    \; : \; s - \frac{1}{n} < a_{n} 
+  \]
+\end{mypropbox}
+
+\begin{mythmbox}
+  Έστω $ A \subseteq \mathbb{R} $, $ A \neq \emptyset $ και άνω φραγμένο. 
+  Έστω $ s $ α.φ.\ του $A$. Τότε 
+  \[
+    s = \sup A \Leftrightarrow \text{υπάρχει ακολουθία στοιχείων του $A$ με όριο το $s$} 
+  \]
+\end{mythmbox}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [$ (\Rightarrow) $]
+      Έστω $ s = \sup A $. Τότε από τη χαρακτηριστική ιδιότητα του supremum έχουμε ότι:
+      \begin{align*}
+        \exists a_{1} \in A \; &: \; s - 1 < a_{1} \\
+        \exists a_{2} \in A \; &: \; s - \frac{1}{2}  < a_{2} \\
+                               &\vdots \\
+        \exists a_{n} \in A \; &: \; s - \frac{1}{n}  < a_{n} 
+      \end{align*} 
+
+      Επομένως υπάρχει ακολουθία, η $ (a_{n})_{n \in \mathbb{N}} $, στοιχείων του $A$, 
+      με την ιδιότητα $ s - \frac{1}{n} < a_{n} \leq s, \; \forall n \in \mathbb{N}$. 
+
+      Παρατηρούμε ότι $ \lim_{n \to +\infty} s- \frac{1}{n} = \lim_{n \to +\infty} s = s $ 
+
+      Οπότε από το Κριτήριο Παρεμβολής, έχουμε ότι $ \lim_{n \to +\infty} a_{n}= s $, 
+      το ζητούμενο.
+
+    \item [$ (\Rightarrow) $]
+      Έστω $ s $ α.φ.\ του $A$ και έστω ότι υπάρχει ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ 
+      στοιχείων του $A$ ώστε $ \lim_{n \to +\infty} a_{n}= s$. Θ.δ.ο. $ s = \sup A $. 
+      Πράγματι, 
+
+      Έστω ότι $ s \neq \sup A $. Τότε $ \sup A < s \Rightarrow s - \sup A > 0 > 0 $. 
+
+      Επιλέγω $ \varepsilon = s - \sup A >0 $. Οπότε από τον ορισμό του ορίου, έχουμε ότι 
+      $ \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad \abs{a_{n} - a} < 
+      s - \sup A \Leftrightarrow \underbrace{-(s - \sup A) < a_{n} - s} < s - \sup A 
+      \Leftrightarrow a_{n} > \sup A$, άτοπο, γιατί $ \sup A $ α.φ.\ του $A$.
+  \end{description}
+\end{proof}
+

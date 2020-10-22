@@ -1,0 +1,318 @@
+%%%%%%%%% mdframed theorem boxes, breakable and with ref support %%%%%%%%
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+\mdfdefinestyle{mythm}{innertopmargin=0pt,linecolor=Col2!75,linewidth=2pt,
+  backgroundcolor=Col2!15, %background color of the box
+  shadow=false,shadowcolor=Col2,shadowsize=5pt,% shadows
+  frametitleaboveskip=\dimexpr-1.3\ht\strutbox\relax, 
+  frametitlealignment={\hspace*{0.03\linewidth}},%
+}
+
+\mdfdefinestyle{mydfn}{innertopmargin=0pt,linecolor=Col1!75,linewidth=2pt,
+  backgroundcolor=Col1!15, %background color of the box
+  shadow=false,shadowcolor=Col1,shadowsize=5pt,% shadows
+  frametitleaboveskip=\dimexpr-1.3\ht\strutbox\relax, 
+  frametitlealignment={\hspace*{0.03\linewidth}},%
+}
+
+\mdfdefinestyle{myprop}{innertopmargin=0pt,linecolor=blue!75,linewidth=2pt,
+  backgroundcolor=blue!10, %background color of the box
+  shadow=false,shadowcolor=blue,shadowsize=5pt,% shadows
+  frametitleaboveskip=\dimexpr-1.3\ht\strutbox\relax, 
+  frametitlealignment={\hspace*{0.03\linewidth}},%
+}
+
+\mdfdefinestyle{myboxs}{innertopmargin=0pt,linecolor=blue!75,linewidth=0pt,
+  backgroundcolor=blue!15, %background color of the box
+  shadow=false,shadowcolor=blue,shadowsize=5pt,% shadows
+}
+
+% \newcounter{theo}[section]
+% \setcounter{theo}{0}
+% \renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+
+
+\newenvironment{mythm}[2][]{%
+  \refstepcounter{thm}
+  % Code for box design goes here.
+  \ifstrempty{#1}%
+    % if condition (without title)
+    {\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=Col2!75,text=white]
+  {\strut Θεώρημα~\thethm};},%
+      }%
+      % else condition (with title)
+      }{\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=Col2!75,text=white]
+  {\strut Θεώρημα~\thethm~~({#1})};},%
+      }%
+    }%
+    % Both conditions
+    \mdfsetup{
+      style=mythm
+    }
+    \begin{mdframed}[]\relax\label{#2}}{%
+  \end{mdframed}}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{mydfn}[2][]{%
+  \refstepcounter{thm}
+  % Code for box design goes here.
+  \ifstrempty{#1}%
+    % if condition (without title)
+    {\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=Col1!75,text=white,draw=Col1!75]
+  {\strut Ορισμός~\thethm};},%
+      }%
+      % else condition (with title)
+      }{\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=Col1!75,text=white,draw=Col1!75]
+  {\strut Ορισμός~\thethm~~({#1})};},%
+      }%
+    }%
+    % Both conditions
+    \mdfsetup{
+      style=mydfn
+    }
+    \begin{mdframed}[]\relax\label{#2}}{%
+  \end{mdframed}}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{myprop}[2][]{%
+  \refstepcounter{thm}
+  % Code for box design goes here.
+  \ifstrempty{#1}%
+    % if condition (without title)
+    {\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!50,text=white]
+  {\strut Πρόταση~\thethm};},%
+      }%
+      % else condition (with title)
+      }{\mdfsetup{
+  frametitle={%
+    \tikz[baseline=(current bounding box.east),outer sep=0pt]
+    \node[anchor=east,rectangle,fill=blue!50,text=white]
+  {\strut Πρόταση~\thethm~~({#1})};},%
+      }%
+    }%
+    % both conditions
+    \mdfsetup{
+      style=myprop
+    }
+    \begin{mdframed}[]\relax\label{#2}}{%
+  \end{mdframed}}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{myboxs}{%
+  % Code for box design goes here.
+    \mdfsetup{
+      style=myboxs
+    }
+    \begin{mdframed}[]\relax}{%
+\end{mdframed}}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \renewcommand{\qedsymbol}{$\blacksquare$}
+
+\newcommand{\comb}[2]{\lambda_{1}\vec{#1}_{1} + \cdots + \lambda_{#2}\vec{#1}_{#2}}
+\newcommand{\combc}[3]{#2_{1}\vec{#1}_{1} + \cdots + #2_{#3}\vec{#1}_{#3}}
+\newcommand{\combb}[2]{\lambda_{1}\vec{#1}_{1} + \lambda_{2}\vec{#1}_{2} + \cdots + 
+\lambda_{#2}\vec{#1}_{#2}}
+
+\newcommand{\me}{\mathrm{e}}
+
+
+\newlist{myitemize}{itemize}{3}
+\setlist[myitemize]{label=\textcolor{Col1}{\tiny$\blacksquare$},leftmargin=*}
+
+\newlist{myitemize*}{itemize*}{3}
+\setlist[myitemize*]{itemjoin=\hspace{2\baselineskip},label=\textcolor{Col1}{\tiny$\blacksquare$}}
+
+\newlist{myenumerate}{enumerate}{3}
+\setlist[enumerate,1]{label=\textcolor{Col1}{\theenumi.},leftmargin=*}
+\setlist[enumerate,2]{label=\textcolor{Col1}{\roman*)},leftmargin=*}
+
+\setlist[description]{labelindent=1em,widest=Ιανουα0000,labelsep*=1em,itemindent=0pt,leftmargin=*}
+
+% %%%%%%%%%%%%%%%%%% fancy headings %%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%%%% my boxes %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newcommand{\mythm}[1]{
+%       \refstepcounter{thm}
+%     \begin{tikzpicture}
+%         \node[myboxthm] (box1) 
+%         {
+%             \begin{minipage}{0.9\textwidth}
+%                 #1
+%             \end{minipage}
+%         } ;
+
+%         \node[myboxtitlethm] at (box1.north west) {\strut Θεώρημα~\thethm} ;
+%     \end{tikzpicture}
+% }
+
+% \newcommand{\mythmm}[2]{
+%       \refstepcounter{thm}
+%     \begin{tikzpicture}
+%         \node[myboxthm] (box1) 
+%         {
+%             \begin{minipage}{0.9\textwidth}
+%                 #2
+%             \end{minipage}
+%         } ;
+
+%         \node[myboxtitlethm] at (box1.north west) {\strut Θεώρημα~\thethm \; (#1)} ;
+%     \end{tikzpicture}
+% }
+
+% \newcommand{\mydfn}[1]{
+%       \refstepcounter{dfn}
+%     \begin{tikzpicture}
+%         \node[myboxdfn] (box1) 
+%         {
+%             \begin{minipage}{0.9\textwidth}
+%                 #1
+%             \end{minipage}
+%         } ;
+
+%         \node[myboxtitledfn] at (box1.north west) {\strut Ορισμός~\thedfn} ;
+%     \end{tikzpicture}
+% }
+
+
+% \newcommand{\myprop}[1]{
+%       \refstepcounter{thm}
+%     \begin{tikzpicture}
+%         \node[myboxprop] (box1) 
+%         {
+%             \begin{minipage}{0.9\textwidth}
+%                 #1
+%             \end{minipage}
+%         } ;
+
+%         \node[myboxtitleprop] at (box1.north west) {\strut Πρόταση~\theprop} ;
+%     \end{tikzpicture}
+% }
+
+% \newcommand{\mypropp}[2]{
+%       \refstepcounter{thm}
+%     \begin{tikzpicture}
+%         \node[myboxprop] (box1) 
+%         {
+%             \begin{minipage}{0.9\textwidth}
+%                 #2
+%             \end{minipage}
+%         } ;
+
+%         \node[myboxtitleprop] at (box1.north west) {\strut Πρόταση~\theprop (#1)} ;
+%     \end{tikzpicture}
+% }
+
+%%%\mybrace{<first>}{<second>}[<Optional text>]
+\newcommand{\tikzmark}[1]{\tikz[baseline={(#1.base)},overlay,remember picture] \node[outer
+sep=0pt, inner sep=0pt] (#1) {\phantom{A}};}
+%% syntax
+\NewDocumentCommand\mybrace{mmo}{%
+  \IfValueTF {#3}{%
+    \begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+      \draw[decorate,thick] (#1.north east) -- (#2.south east) 
+        node (b) [midway,xshift=13pt,label={right=of b}:{#3}] {};
+    \end{tikzpicture}%
+  }%
+  {%
+    \begin{tikzpicture}[overlay, remember picture,decoration={brace,amplitude=1ex}]
+      \draw[decorate,thick] (#1.north east) -- (#2.south east);
+    \end{tikzpicture}%
+  }%
+}%
+
+%%%%%%%How to use this %%%%%%%%%%%%%%%%%%%%%%%%%
+%use \tikzmark{a} and \tikzmark{b} at first and last \item where the brace is
+%wanted
+%use the following command after \end{enumerate}
+%\mybrace{a}{b}[Text comes here to describe these to items and justify for your
+%case]]
+
+
+
+%%%%% label inline equations and don't allow reference
+\newcommand\inlineeqno{\stepcounter{equation} (\theequation)}
+
+%%%%%defines \inlineequation[<label name>]{<equation>}
+%%%%%%%%format use \inlineequation[<label name>]{<equation>}%%%%%%%
+\makeatletter
+\newcommand*{\inlineequation}[2][]{%
+    \begingroup
+    % Put \refstepcounter at the beginning, because
+    % package `hyperref' sets the anchor here.
+    \refstepcounter{equation}%
+    \ifx\\#1\\%
+\else
+    \label{#1}%
+\fi
+% prevent line breaks inside equation
+\relpenalty=10000 %
+\binoppenalty=10000 %
+\ensuremath{%
+    % \displaystyle % larger fractions, ...
+    #2%
+}%
+\quad ~\@eqnnum
+\endgroup
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%% fancy enumitem cicled label %%%%%%%%%%%%%%%%%%
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+\node[shape=circle,draw,inner sep=0.3pt] (char) {#1};}}
+% use it like \begin{enumerate}[label=\protect\circled{\Alph{enumi}}]
+%%%\mybrace{<first>}{<second>}[<Optional text>]
+%%% wrap with braces list environments
+
+
+
+
+%%%%%%%%%%%%% puts brace under matrix
+\newcommand\undermat[2]{%
+  \makebox[0pt][l]{$\smash{\underbrace{\phantom{%
+\begin{matrix}#2\end{matrix}}}_{\text{$#1$}}}$}#2}
+
+
+%circle item inside array or matrix
+\newcommand\Circle[1]{%
+\tikz[baseline=(char.base)]\node[circle,draw,inner sep=2pt] (char) {#1};}
+
+
+  %redeftine \eqref so that parenthesis () have the color the link
+\makeatletter
+\renewcommand*{\eqref}[1]{%
+  \hyperref[{#1}]{\textup{\tagform@{\ref*{#1}}}}%
+}
+\makeatother
+
+%removes qedsymbol and additional vertical space at the end 
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  % \pushQED{\hfill\qedhere}% <--- remove the QED business
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+        #1\@addpunct{.}]\ignorespaces
+}{%
+ % \popQED% <--- remove the QED business
+  \endtrivlist\@endpefalse
+}
+\renewcommand\qedhere{$\blacksquare$} % to ensure code portability
+\makeatother
+

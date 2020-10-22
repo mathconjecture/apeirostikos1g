@@ -1,0 +1,180 @@
+\input{../frontmatter/preamble_a4.tex}
+\input{../frontmatter/definitions.tex}
+\input{tikz.tex}
+
+
+
+
+
+\begin{document}
+
+\chapter{Πραγματικοί Αριθμοί}
+
+\section{Μέγιστο, Ελάχιστο, Άνω και Κάτω Φράγματα}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{άνω 
+    φραγμένο} $ \Leftrightarrow \exists \textcolor{Col2}{M \in \mathbb{R}} \; 
+    \text{(\textcolor{Col1}{άνω φράγμα})} \; : a \leq M, \; 
+    \forall a \in A$ 
+\end{dfn}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{κάτω 
+    φραγμένο} $ \Leftrightarrow \exists \textcolor{Col2}{m \in \mathbb{R}} \; 
+    \text{(\textcolor{Col1}{κάτω φράγμα})}  \; : a \geq m, \; 
+    \forall a \in A$
+\end{dfn}
+
+\begin{dfn}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{ 
+    φραγμένο}   $ \Leftrightarrow A $ άνω και κάτω φραγμένο 
+        $ \Leftrightarrow \exists m,M \in \mathbb{R} \; : \; m \leq a \leq M,
+        \; \forall a \in A $
+\end{dfn}
+
+\begin{dfn}
+        $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ \textcolor{Col1}{ 
+        απολύτως φραγμένο} 
+        $\Leftrightarrow \exists M>0 \, : \, \abs{a} \leq M, \; \forall a \in A $ 
+        $ \Leftrightarrow  \, -M \leq a \leq M, \; \forall a \in A $
+\end{dfn}
+
+\begin{prop}
+    $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ είναι φραγμένο 
+    $ \Leftrightarrow $ $ A $ είναι απολύτως φραγμένο.
+\end{prop}
+
+\begin{rem}
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item Αν $ M $ άνω φράγμα του $A$ και $ \textcolor{Col2}{M \in A} $ τότε $M$ λέγεται 
+    \textcolor{Col1}{μέγιστο} του $A$ και συμβολίζεται $ M = \max A $.
+\item Αν $ m $ κάτω φράγμα του $A$ και $ \textcolor{Col2}{m \in A} $ τότε $m$ λέγεται \textcolor{Col1}{ελάχιστο} του $A$ και συμβολίζεται $ m = \min A $.  \end{itemize}
+\end{rem}
+
+\section{Supremum, Infimum}
+
+\begin{dfn}
+    Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $.
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item $ s \in \mathbb{R} $ \textcolor{Col1}{supremum} του $A$ 
+          (\textcolor{Col2}{$s = \sup A $}) 
+            $ \Leftrightarrow $ 
+            \begin{tabular}[t]{l}
+                $s$ άνω φράγμα του $A \Leftrightarrow a \leq s, \; \forall a 
+                \in A $ \\
+                $s$ \textbf{ελάχιστο άνω φράγμα} του $A  \Leftrightarrow 
+                \forall M \; \text{α.φ.\ του} A \Rightarrow s \leq M $
+            \end{tabular} 
+
+        \item $ s \in \mathbb{R} $ \textcolor{Col1}{infimum} του $A$ 
+            ($ \textcolor{Col2}{s= \inf A} $) 
+            $ \Leftrightarrow $ 
+            \begin{tabular}[t]{l}
+                $s$ κάτω φράγμα του $A \Leftrightarrow a \geq s, \; \forall a 
+                \in A $ \\
+                $s$ \textbf{μέγιστο κάτω φράγμα} του $A \Leftrightarrow 
+                \forall m \; \text{κ.φ.\ του} A \Rightarrow s \geq m $
+            \end{tabular} 
+    \end{itemize}
+\end{dfn}
+
+\begin{rem}
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        % \item 
+        %   Η \textcolor{Col1}{χαρακτηριστική ιδιότητα} που έχει το supremum ενός συνόλου $ A $, είναι
+        %   ότι είναι το \textbf{ελάχιστο από τα άνω φράγματα} του $A$. Δηλαδή, με άλλα λόγια,
+    % κάθε πραγματικός αριθμός μικρότερος του $M$ \textbf{δεν} είναι άνω φράγμα του 
+    % $A$, επομένως, $ \forall k < M, \; \exists a \in A \; : \; k < a < M $, 
+    % ή καλύτερα, $ \forall \varepsilon > 0, \; \exists a \in A \; : \; 
+    % M- \varepsilon < a$
+
+        \item 
+          Η \textcolor{Col1}{χαρ.\ ιδιότητα} του sup ενός συνόλου $ A $, είναι
+          ότι είναι το \textbf{ελάχιστο άνω φράγμα} του $A$. Δηλ, 
+    κάθε αριθμός μικρότερος του $s$ \textbf{δεν} είναι α.φ.\ του 
+    $A$, δηλ, $ \forall k < s, \; \exists a \in A \, : \, k < a < s $, 
+    ή $ \forall \varepsilon > 0, \; \exists a \in A \, : \, s- \varepsilon < a.$
+
+\item 
+  Η \textcolor{Col1}{χαρ.\ ιδιότητα} του inf ενός συνόλου $ A $, είναι
+  ότι είναι το \textbf{μέγιστο κάτω φράγμα} του $A$. Δηλ,
+  κάθε αριθμός μεγαλύτερος του $s$ \textbf{δεν} είναι κ.φ.\ του 
+    $A$, δηλ, $ \forall k > s, \; \exists a \in A \, : \, s < a < k $, 
+    ή $ \forall \varepsilon > 0, \; \exists a \in A \, : \, 
+    a < s + \varepsilon. $
+    \end{itemize}
+\end{rem}
+\begin{thm}[\textcolor{Col2}{Χαρακτηριστική ιδιότητα του sup και inf}]
+\item {}
+    \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+        \item Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $, $ A $ άνω φραγμένο με
+          $s \in \mathbb{R}$ \textbf{άνω φράγμα} του A, τότε 
+    \[
+         \boxed{s = \sup A \Leftrightarrow \forall \varepsilon > 0, \; \exists 
+         a \in A \; : \; s- \varepsilon  < a}
+     \] 
+
+ \item Έστω $ A \subseteq \mathbb{R}, \; A \neq \emptyset $, $ A $ κάτω
+   φραγμένο με $s \in \mathbb{R}$ \textbf{κάτω φράγμα} του A, τότε 
+    \[
+         \boxed{s = \inf A \Leftrightarrow \forall \varepsilon > 0, \; \exists 
+         a \in A \; : \; a < s+ \varepsilon}
+     \] 
+    \end{itemize}
+    \end{thm}
+
+% \begin{prop}
+%         \item {}
+%     \begin{itemize}[label=\textcolor{Col1}{\tiny$\blacksquare$}]
+%         \item $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και $A$ όχι 
+%             άνω φραγμένο $ \Rightarrow \sup A = + \infty $.
+%         \item $ A \subseteq \mathbb{R}, \; A \neq \emptyset $ και $A$ όχι 
+%             κάτω φραγμένο $ \Rightarrow \inf A = - \infty $.
+%     \end{itemize}
+% \end{prop}
+
+    \vspace{\baselineskip}
+
+    \twocolumnside{
+      \section{Supremum και infimum}
+      \begin{myitemize}
+        \item $ \sup (-A) = - \inf A \; \text{και} \; \inf (-A) = - \sup A $
+        \item $ \sup (\lambda A) = \lambda \sup A \; \text{και} \; \inf (\lambda A) =
+          \lambda \inf A, \; \textcolor{Col1}{\lambda >0} $
+        \item $ \sup (\lambda A) = \lambda \inf A \; \text{και} \inf (\lambda A) =
+          \lambda \sup A, \; \textcolor{Col1}{\lambda <0} $
+        \item $ \sup {(A \cup B)} = \max \{ \sup A, \sup B \} $ 
+        \item $ \inf {(A \cup B)} = \min \{ \inf A, \inf B \} $ 
+        \item $ \sup {(A+B)} = \sup A + \sup B $
+        \item $ \inf {(A+B)} = \inf A + \inf B $
+        \item $ \sup {(A\cdot B)} = \sup A \cdot \sup B $ \tikzmark{a}
+        \item $ \inf {(A\cdot B)} = \inf A \cdot \inf B $ \;\;\, \tikzmark{b}
+      \end{myitemize}
+      \mybrace{a}{b}[αν $ A,B \subseteq \mathbb{R}^{+} $]
+    }{
+    \section{Ρητοί και Άρρητοι}
+    \begin{myitemize}
+      \item ρητός + άρρητος = άρρητος 
+      \item άρρητος + άρρητος = ρητός ή άρρητος 
+      \item ρητός $ \cdot $ άρρητος = άρρητος (εκτός αν ο ρητός=0)
+    \end{myitemize}
+    \section{Ανισότητα Bernoulli}
+    \begin{myitemize}
+      \item $(1+a)^{n} \geq 1+ na, \quad \forall n \in \mathbb{N}, \; a>-1 $
+    \end{myitemize}
+    \section{Τριγωνική Ανισότητα}
+    \begin{myitemize}
+      \item $ \abs{\abs{a} - \abs{b}} \leq \abs{a \pm b} \leq \abs{a} + \abs{b}, \quad 
+        \forall a,b \in \mathbb{R} $
+    \end{myitemize}
+    \section{Ακέραιο Μέρος}
+    \begin{myitemize}
+      \item $ [x] \leq x < [x]+1, \quad \forall x \in \mathbb{R} $ 
+    \end{myitemize}
+  }
+
+\end{document}
+

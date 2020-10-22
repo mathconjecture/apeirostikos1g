@@ -1,0 +1,195 @@
+\input{preamble_ask.tex}
+\input{definitions.tex}
+\input{tikz.tex}
+\input{myboxes.tex}
+
+\pagestyle{vangelis}
+
+\begin{document}
+
+
+
+\begin{center}
+  \minibox{\large\bfseries\textcolor{Col1}{Αθροίσματα}}
+\end{center}
+
+\vspace{\baselineskip}
+
+\begin{mybox1}
+\begin{dfn}
+Έστω $ a_{1}, a_{2}, \ldots, a_{n} \in \mathbb{R} $. Ορίζουμε 
+$ \sum\limits_{k=1}^{n} a_{k} = a_{1} + a_{2} + \cdots + a_{n} $
+\end{dfn}
+\end{mybox1}
+
+Το σύμβολο του αθροίσματος έχει τις παρακάτω ιδιότητες.
+{
+  \everymath{\displaystyle}
+  \begin{myitemize}
+    \item $ \sum_{n=k}^{N} a_{n} = \sum_{n=k- \rho }^{N- \rho } a_{n+ \rho} $ ή  
+      $ \sum_{n=k}^{N} a_{n} = \sum_{n=k+ \rho }^{N+ \rho } a_{n- \rho} $
+    \item $ \sum_{n=k}^{N} \lambda a_{n} = \lambda \sum_{n=k}^{N} a_{n} $ 
+    \item $ \sum_{n=k}^{N} (a_{n}+b_{n}) = \sum_{n=k}^{N} a_{n} + \sum_{n=k}^{N} b_{n} $ 
+  \end{myitemize}
+}
+
+\begin{rem}
+  Αν ένα από τα όρια του συμβόλου του αθροίσματος είναι $ - \infty $ ή $ + \infty $, 
+  τότε ή τρίτη ιδιότητα \textbf{δεν} ισχύει πάντα.
+\end{rem}
+
+Τα παρακάτω παραδείγματα, περιγράφουν μερικές από τις πιο βασικές ιδιότητες που 
+έχουν τα αθροίσματα.
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=3}^{6} n^{2} = \sum_{n=4}^{7} (n-1)^{2}   $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=4}^{7} (n-1)^{2} &= (4-1)^{2}+(5-1)^{2}+(6-1)^{2}+(7-1)^{2} 
+    = 3^{2}+4^{2}+5^{2}+6^{2} = \sum_{n=3}^{6} n^{2} 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=3}^{6} n^{2} = \sum_{n=1}^{4} (n+2)^{2}   $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=1}^{4} (n+2)^{2} = (1+2)^{2}+(2+2)^{2}+(3+2)^{2}+(4+2)^{2}=
+    3^{2}+4^{2}+5^{2}+6^{2} = \sum_{n=3}^{6} n^{2} 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{5} (2n+1) - \sum_{n=3}^{5} (2n+1)  =  
+  \sum_{n=1}^{2} (2n+1) $
+\end{example}
+\begin{proof}
+  \begin{align*}
+    \sum_{n=1}^{5} (2n+1)- \sum_{n=3}^{5} (2n+1) = 
+    (3+5+7+9+11) - (7+9+11) = 3 + 5 = \sum_{n=1}^{2} (2n+1) 
+  \end{align*}
+\end{proof}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{20} (2n+1) - \sum_{n=8}^{20} (2n+1) = \sum_{n=1}^{7} 
+  (2n+1) $ 
+\end{example}
+\begin{proof}
+\item 
+  \[
+    \sum_{n=1}^{20} (2n+1) - \sum_{n=8}^{20} (2n+1) = \sum_{n=1}^{7} (2n+1) + 
+    \sum_{n=8}^{20} (2n+1) - \sum_{n=8}^{20} (2n+1) = 
+    \sum_{n=1}^{7} (2n+1)
+  \]
+\end{proof}
+
+\begin{example}[Τηλεσκοπικό Άθροισμα]
+  Να δείξετε ότι $ \sum_{n=1}^{5} \frac{1}{n(n+1)} = 1 - \frac{1}{6}  $
+\end{example}
+\begin{proof}(Με ανάλυση σε απλά κλάσματα)
+\item {}
+  Έχουμε $ \frac{1}{n(n+1)} = \frac{A}{n} + \frac{B}{n+1} = 
+  \frac{1}{n} - \frac{1}{n+1}$, οπότε
+  \begin{equation*}
+    \sum_{n=1}^{5} \frac{1}{n(n+1)} = \sum_{n=1}^{5} \left(\frac{1}{n} - 
+    \frac{1}{n+1}\right)    
+    = \left(\frac{1}{1} - \frac{1}{2}\right) + \left(\frac{1}{2} 
+    - \frac{1}{3} \right) + \left(\frac{1}{3} - \frac{1}{4}\right) 
+    + \left(\frac{1}{4} - \frac{1}{5}\right) +
+    \left(\frac{1}{5} - \frac{1}{6}\right)  = 1 - \frac{1}{6}
+  \end{equation*} 
+\end{proof}
+
+\begin{mybox3}
+\begin{prop}[Γεωμετρική Πρόοδος]
+  \label{prop:geom}
+  Έστω $ \lambda \in \mathbb{R} \setminus \{ 1 \}  $. Τότε το άθροισμα 
+  $ \sum_{k=0}^{n} \lambda ^{k} = 1 + \lambda + \lambda ^{2} + \lambda ^{3} + 
+  \cdots + \lambda ^{n} = \frac{\lambda ^{n+1}-1}{\lambda -1}, 
+  \quad \; \forall n \in \mathbb{N} $
+\end{prop}
+\end{mybox3}
+\begin{proof} (Με Μαθ. Επαγωγή)
+\item {}
+  \begin{myitemize}
+    \item Για $ n=1 $, έχω: $1+ \lambda = \frac{\lambda ^{2}-1}{\lambda -1} = 
+      \frac{\cancel{(\lambda -1)}(\lambda +1)}{\cancel{\lambda -1}} = \lambda +1 $,
+      ισχύει.
+    \item Έστω ότι η ισότητα ισχύει για $n$, δηλ. 
+      $\inlineequation[eq:epagex3]{1+ \lambda + \lambda ^{2} + \lambda ^{3} + 
+      \cdots \lambda ^{n} = \frac{\lambda ^{n+1}-1}{\lambda -1}}$.
+    \item Θα δείξουμε ότι ισχύει και για $ n+1 $. Πράγματι:
+      \begin{align*}
+        1+ \lambda + \lambda ^{2}+ \cdots + \lambda ^{n} + \lambda ^{n+1}
+          &\overset{\eqref{eq:epagex3}}{=}
+          \frac{\lambda ^{n+1}-1}{\lambda -1} + \lambda ^{n+1} = \frac{\lambda
+            ^{n+1}-1 + \lambda ^{n+1}(\lambda -1)}{\lambda -1} = 
+            \frac{\cancel{\lambda ^{n+1}} -1 + 
+          \lambda ^{n+2} - \cancel{\lambda ^{n+1}}}{\lambda -1} \\ 
+          &= \frac{\lambda ^{(n +1)+1}-1}{\lambda -1} 
+      \end{align*}
+  \end{myitemize}
+\end{proof}
+
+\begin{example} Να υπολογιστεί το άθροισμα $ \sum_{n=1}^{6} 2^{n} $
+  \begin{solution}
+    \[
+      \sum_{n=1}^{6} 2^{n} = \sum_{n=0}^{5} 2^{n+1} = 2 \cdot \sum_{n=0}^{5} 2^{n} 
+      \overset{\ref{prop:geom}}= 2 \cdot \frac{2^{6}-1}{2-1} = 2 \cdot 63 = 126 
+    \]
+  \end{solution}
+\end{example}
+
+\begin{example}
+  Να δείξετε ότι $ \sum_{n=1}^{100} \frac{1}{n(n+1)} \leq \sum_{n=1}^{100} 
+  \frac{1}{n^{2}} $
+\end{example}
+\begin{proof}
+\item {} 
+  Έχουμε $ n+1 > n $ , $ \forall n \in \mathbb{N} $, οπότε
+  \[
+    \frac{1}{n+1} < \frac{1}{n} \overset{\cdot \frac{1}{n} >0}{\Rightarrow}
+    \frac{1}{n(n+1)} < \frac{1}{n^{2}} \Rightarrow \sum_{n=1}^{100} 
+    \frac{1}{n(n+1)} \leq \sum_{n=1}^{100} \frac{1}{n^{2}} 
+  \] 
+\end{proof}
+
+\begin{exercise}
+  Να δείξετε ότι $ \sum_{n=1}^{100} \frac{1}{n(n+1)} \leq \sum_{n=2}^{101} 
+  \frac{1}{n^{2}} $
+\end{exercise} 
+\begin{proof}
+\item {} 
+  Έχουμε $ n-1 < n, \; \forall n \in \mathbb{N} $ και 
+  $ n-1>0, \; \forall n \geq 2 $, άρα
+  \begin{equation}\label{eq:sumexam}
+    \frac{1}{n-1} \leq \frac{1}{n} \overset{\cdot \frac{1}{n} >0}{\Rightarrow}
+    \frac{1}{n(n-1)} \leq \frac{1}{n^{2}}, \quad \forall n \geq 2 \Rightarrow 
+    \sum_{n=2}^{101} \frac{1}{n(n-1)} \leq 
+    \sum_{n=2}^{101} \frac{1}{n^{2}}
+  \end{equation} 
+  Άρα, 
+  \[
+    \sum_{n=1}^{100} \frac{1}{n(n+1)} = \sum_{n=2}^{101} \frac{1}{(n-1)n} 
+    \overset{\eqref{eq:sumexam}}{\leq} \sum_{n=2}^{101} \frac{1}{n^{2}} 
+  \]
+\end{proof}
+
+\begin{example}
+  Με Μαθηματική Επαγωγή, αποδεικνύονται εύκολα τα παρακάτω αθροίσματα.
+  \begin{enumerate}[wide,labelindent=0pt]
+    \item $ \sum_{k=1}^{n} k = 1+2+3+\cdots+n = \frac{n(n+1)}{2}, 
+      \quad \forall n \in \mathbb{N}  $
+    \item $ \sum_{k=1}^{n} k^{2} =1^{2}+2^{2}+3^{2}+\cdots+n^{2} = 
+      \frac{n(n+1)(2n+1)}{6}, \quad \forall n \in \mathbb{N} $
+    \item $ \sum_{k=1}^{n} k^{3} = 1^{3}+2^{3}+3^{3}+\cdots +n^{3} = 
+      \left(\frac{n(n+1)}{2} \right)^{2}, \; \forall n \in \mathbb{N} $
+  \end{enumerate}
+\end{example}
+
+
+
+
+\end{document}
