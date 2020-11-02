@@ -1917,6 +1917,89 @@
   η $ {(a_{k_{n}})}_{n \in \mathbb{N}} $ συγκλίνει σε πραγματικό αριθμό.
 \end{proof}
 
+\section{Ακολουθίες Cauchy}
 
+\begin{mybox1}
+\begin{dfn}
+  Μια ακολουϑία $ {(a_{n})}_{n \in \mathbb{N}} $ πραγματικών αριθμών καλείται 
+  \textcolor{Col1}{ακολουθία Cauchy}, αν 
+  $ \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} \; : \; \forall n,m \geq
+  n_{0} \quad \abs{a_{n} - a_{m}} < \varepsilon $ 
+\end{dfn}
+\end{mybox1}
+
+\begin{mybox3}
+  \begin{prop}\label{prop:cauchyfragm}
+  Κάθε ακολουθία Cauchy είναι φραγμένη.
+\end{prop}
+\end{mybox3}
+\begin{proof}
+  Έστω η $ {(a_{n})}_{n \in \mathbb{N}} $ είναι μια ακολουθία Cauchy. Τότε για 
+  $ \varepsilon = 1>0$ 
+  \[
+    \; \exists n_{0} \in \mathbb{N} \; : \; \forall n,m \geq n_{0}
+    \quad \abs{a_{n}-a_{m}} < 1 
+  \] 
+  Συνεπώς, για $ m = n_{0} $ και $ \forall n \geq n_{0} $, έχουμε 
+  $ \inlineequation[eq:cauchy1]{\abs{a_{n}- a_{n_{0}}} < 1} $. 
+  Άρα, $ \forall n \geq n_{0} $, έχουμε
+  \[
+    \abs{a_{n}} = \abs{a_{n} + a_{n_{0}}- a_{n_{0}}} \leq \abs{a_{n}- a_{n_{0}}} + 
+    \abs{a_{n_{0}}} < 1 + \abs{a_{n_{0}}}
+   \] 
+   Θέτουμε $ M = \max \{ 1+ \abs{a_{n_{0}}} , \abs{a_{1}} , \abs{a_{2}} , \ldots,
+   \abs{a_{n_{0}-1}} \} $. Τότε, $ \forall n \geq n_{0} $, έχουμε ότι 
+   $ \abs{a_{n}} \leq M $, δηλαδή, η ακολουθία $ {(a_{n})}_{n \in \mathbb{N}} $ 
+   είναι φραγμένη.
+\end{proof}
+
+\begin{mybox3}
+\begin{prop}
+  Μια ακολουθία $ {(a_{n})}_{n \in \mathbb{N}} $ είναι Cauchy $ \Leftrightarrow $ 
+  $ {(a_{n})}_{n \in \mathbb{N}} $ συγκλίνει σε πραγματικό αριθμό.
+\end{prop}
+\end{mybox3}
+\begin{proof}
+\item {}
+  \begin{description}
+    \item [($ \Leftarrow $)] Έστω $ \lim_{n \to \infty} a_{n} = a \in \mathbb{R} $. 
+      Θα δέιξουμε ότι η ακολουθία $ {(a_{n})}_{n \in \mathbb{N}} $ είναι Cauchy. 
+
+      Έστω $ \varepsilon >0 $. Επειδή $ \lim_{n \to \infty} a_{n} = a $, για 
+      $ \frac{\varepsilon}{2} > 0 $,
+      \[ 
+        \exists n_{0} \in \mathbb{N} \; : \; \forall n,m \geq n_{0} \quad 
+        \abs{a_{n} - a_{m}} = 
+        \abs{a_{n} - a + a - a_{m}} \leq \abs{a_{n}-a} + \abs{a_{m}-a} < 
+        \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon 
+      \]
+    \item [($ \Rightarrow $)] Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία Cauchy. 
+      Θα δείξουμε ότι η $ {(a_{n})}_{n \in \mathbb{N}} $ συγκλίνει σε πραγματικό
+      αριθμό.Πράγματι, 
+      Επειδή η $ {(a_{n})}_{n \in \mathbb{N}} $ είναι Cauchy, από την
+      πρόταση~\ref{prop:cauchyfragm}, είναι φραγμένη. Επομένως, από το θεώρημα 
+      Bolzano-Weierstrass υπάρχει ακολουθία $ (a_{k_{n}})_{n \in \mathbb{N}} $ 
+      που συγκλίνει σε πραγματικό αριθμό, έστω $ a \in \mathbb{R} $. Θα δέιξουμε ότι 
+      $ \lim_{n \to \infty} a_{n} = a $. Έστω $ \varepsilon >0 $. Επειδή $ \lim_{n \to
+      \infty} a_{k_{n}} = a $, για $ \frac{\varepsilon}{2} > 0 $, 
+      \[
+        \exists n_{1} \in \mathbb{N} \; : \; \forall n \geq n_{1} \quad 
+        \abs{a_{k_{n}}-a} < \frac{\varepsilon}{2}
+      \] 
+      Επειδή η $ {(a_{n})}_{n \in \mathbb{N}} $ είναι Cauchy, για $
+      \frac{\varepsilon}{2} >0 $, 
+      \[
+        \exists n_{2} \in \mathbb{N} \; : \; \forall n,m \geq n_{2} \quad 
+        \abs{a_{n}-a_{m}} < \frac{\varepsilon}{2}
+      \] 
+      Αν θέσουμε $ n_{0} = \max \{ n_{1}, n_{2} \} $, έχουμε ότι $ \forall n \geq n_{0}
+      $, 
+      \[
+        \abs{a_{n}-a} = \abs{a_{n}-a_{k_{n}} + a_{k_{n}} - a} \leq \abs{a_{n}-
+        a_{k_{n}}} + \abs{a_{k_{n}} - a} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+        = \varepsilon 
+      \] 
+  \end{description}
+\end{proof}
 
 \end{document}

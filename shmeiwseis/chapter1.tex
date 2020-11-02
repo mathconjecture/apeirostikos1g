@@ -158,6 +158,31 @@
   \end{enumerate}
 \end{prop}
 \end{mybox3}
+%\begin{proof}
+%  %todo να ξαναγραψω πιο απλα αυτές τις αποδείξεις (δες λυμ. ασκ Spivak)
+%\item {}
+%  \begin{enumerate}[(i)]
+%    \item Έχουμε ότι 
+%      \[ 
+%        a \leq \abs{a} \Rightarrow - \abs{a} \leq a \leq \abs{a}
+%      \] 
+%      \[
+%        b \leq \abs{b} \Rightarrow - \abs{b} \leq b \leq \abs{b} 
+%      \] 
+%      Με πρόσθεση, προκύπτει
+%      \[
+%        - (\abs{a} + \abs{b} ) \leq a + b \leq \abs{a} + \abs{b} 
+%      \] 
+%      Οπότε από την πρόταση~\ref{prop:absprop1}, ισχύει:
+%      $ \abs{a+b} \leq \abs{a} + \abs{b} $
+%    \item Θέτω $ x = a+b $ και $ y = -b $. Για τους $ x,y $ από το $ \rm{i}) $ 
+%      ερώτημα, έχουμε:
+%      \begin{equation}\label{eq:absnew1}
+%        \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{a} \leq 
+%        \abs{a+b} + \abs{b} \Rightarrow \abs{a+b} \geq \abs{a} - \abs{b}
+%      \end{equation} 
+%  \end{enumerate} 
+%\end{proof} 
 \begin{proof}
 \item {}
   \begin{enumerate}[(i)]
@@ -174,23 +199,16 @@
       \] 
       Οπότε από την πρόταση~\ref{prop:absprop1}, ισχύει:
       $ \abs{a+b} \leq \abs{a} + \abs{b} $
-    \item Θέτω $ x = a+b $ και $ y = -b $. Για τους $ x,y $ από το $ \rm{i}) $ 
-      ερώτημα, έχουμε:
-      \begin{equation}\label{eq:absnew1}
-        \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{a} \leq 
-        \abs{a+b} + \abs{b} \Rightarrow \abs{a+b} \geq \abs{a} - \abs{b}
-      \end{equation} 
-  \end{enumerate} 
-\end{proof} 
+    \item Έχουμε 
+      $ \abs{a} = \abs{(a+b)-b} \leq \abs{a+b} + \abs{-b} = \abs{a+b} + \abs{b} 
+      \Rightarrow \inlineequation[eq:absrem1]{\abs{a} - \abs{b} \leq \abs{a+b}} $.
+  \end{enumerate}
+\end{proof}
 
 \begin{rem}
-  Αν θέσουμε $ x = a+b $ και $ y = -a $, τότε για τους $ x,y $ από το $ \rm{i)} $ 
-  υποερώτημα της προηγούμενης πρότασης, έχουμε:
-  \begin{equation}\label{eq:absnew2}
-    \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{b} \leq 
-    \abs{a+b} + \abs{a} \Rightarrow \abs{a+b} \geq \abs{b} - \abs{a} 
-  \end{equation} 
-  Άρα, από τις~\eqref{eq:absnew1} και~\eqref{eq:absnew2}, έχουμε
+  Έχουμε $ \abs{b} = \abs{(a+b)-a} \leq \abs{a+b} + \abs{a} \Rightarrow 
+  \inlineequation[eq:absrem2]{\abs{b} - \abs{a} \leq \abs{a+b}} $.
+  Άρα, από τις~\eqref{eq:absrem1} και~\eqref{eq:absrem2}, έχουμε
   $ - \abs{a+b} \leq \abs{a} - \abs{b} \leq \abs{a+b} $, οπότε τελικά, 
   από την πρόταση~\ref{prop:absprop1} ισχύει ότι
   \begin{equation}\label{eq:trigs} 
@@ -513,7 +531,6 @@
 \end{prop}
 \end{mybox3}
 \begin{proof}
-\item {}
   Έστω ότι $ 0 \leq x < \varepsilon, \quad \varepsilon >0 $ και 
   $ x \neq 0 \xRightarrow{x \geq 0} x > 0$. Τότε για $ \varepsilon = 
   x > 0$, έχουμε ότι $ 0 \leq x < x $, άτοπο.
@@ -655,7 +672,7 @@
       \begin{gather*} 
         m  \leq  a \leq M, \quad \forall a \in A \\
         -M  \leq - a \leq -m, \quad \forall a \in A \\
-        -M  \leq - a \leq -m, \quad \forall (-a) \in -A \\
+        -M  \leq - a \leq -m, \quad \forall (-a) \in -A 
       \end{gather*}
       άρα, $ -m,-M $ είναι άνω και κάτω φράγματα, αντίστοιχα, του $ -A $. Άρα 
       $ -A $ είναι άνω και κάτω φραγμένο, είναι επίσης και μη κενό (γιατί $A$ μη κενό), 
@@ -1118,7 +1135,6 @@ $
 \end{mybox3}
 
 \begin{proof}
-\item {}
   Έστω $(q+r)$ ρητός. Τότε ο $ r = (q+r)-q $ είναι ρητός ως άθροισμα δύο 
   ρητών. Άτοπο.
 \end{proof}
