@@ -3,8 +3,10 @@
 \input{tikz.tex}
 \input{myboxes.tex}
 
+
 \pagestyle{vangelis}
 
+ 
 \begin{document}
 
 
@@ -224,7 +226,7 @@
 \begin{mybox1}
 \begin{dfn}
   Έστω $ A \subseteq \mathbb{R} $. Λέμε ότι το $A$ έχει \textbf{ελάχιστο} στοιχείο, 
-  αν υπάρχει $ \bm{x_{0} \in A} $ τέτοιο ώστε $ a \geq x_{0}, \; \forall a \in A$.
+  αν υπάρχει $ \bm{x_{0} \in A} $ τέτοιο ώστε $ a \geq x_{0}, \; \!\! \forall a \in A$.
 \end{dfn}
 \end{mybox1}
 
@@ -519,7 +521,7 @@
 
 \begin{mybox3}
 \begin{prop}[Αρχιμήδεια Ιδιότητα]
-\item {}
+  \mbox{}
   \begin{enumerate}[(i)]
     \item Το $ \mathbb{N} $ δεν είναι άνω φραγμένο.
     \item $ \forall y > 0, \; \exists n \in \mathbb{N} \; ; \; n > y$
@@ -959,35 +961,18 @@ $
 
 \section{Ακέραιο Μέρος}
 
-\begin{mybox3}
-\begin{prop}
-  Έστω $ x \in \mathbb{R} $. Τότε υπάρχει μοναδικός αριθμός $ m \in \mathbb{Z} $ τέτοιος ώστε $\inlineequation[eq:akermer]{m \leq x < m +1}$.
-\end{prop}
-\end{mybox3}
-
-% \begin{proof}
-%   Έστω $ x \in \mathbb{R} $. Επειδή $ \mathbb{N} $ όχι άνω φραγμένο, τότε από την 
-%   Αρχιμήδεια Ιδιότητα, $ \exists n \in \mathbb{N} $ με $ n > x $. Έστω $ S = \{ 
-%   n \in \mathbb{N} \; : \; n > x\} \Rightarrow S \neq \emptyset $ (υπάρχει το $n$). 
-%   Άρα το $S$ έχει ελάχιστο στοιχείο, έστω $ n_{0} $. Άρα $ n_{0}-1 \leq x \leq 
-%   n_{0} \Rightarrow m \leq n \leq m+1$, δηλαδή $ m= n_{0}-1 = [x] $.
-%   Αποδεικνύουμε την μοναδικότητα:
-%   Έστω $ m' $ με $ m' \leq x \leq m'+1 $ και έστω $ m' \leq m $. Τότε 
-%   $ m' +1 \leq m \leq x $, άτοπο.
-% \end{proof}
-
 \begin{mybox1}
 \begin{dfn}
-  Έστω $ x \in \mathbb{R} $. Ο μοναδικός ακέραιος που ικανοποιεί την 
-σχέση~\eqref{eq:akermer} ονομάζεται \textbf{ακέραιο μέρος} του $x$ και συμβολίζεται $ [x] $.
+  Έστω $ x \in \mathbb{R} $. Ακέραιο μέρος του $ x $ καλούμε τον 
+  μεγαλύτερο ακέραιο που είναι \textbf{μικρότερος} ή \textbf{ίσος} 
+  με το $x$ και το συμβολίζουμε με $ [x] $.
 \end{dfn}
 \end{mybox1}
 
-Ουσιαστικά, το ακέραιο μέρος ενός πραγματικού αριθμού $ x $ είναι ο \textbf{μεγαλύτερος} ακέραιος που δεν υπερβαίνει τον $x$, ή που είναι ίσος με τον $x$,
-αν ο $x$ είναι ακέραιος.
+Το ακέραιο μέρος ενός πραγματικού αριθμού ικανοποιεί τις παρακάτω ιδιότητες:
 
-Το ακέραιο μέρος ενός πραγματικού αριθμού ικανοποιεί τις παρακάτω ιδιότητες.
 \begin{myitemize}
+  \item $ [x] \leq x < [x]+1, \quad \forall x \in \mathbb{R} $
   \item $ x = [x]+ \theta, \quad x \in \mathbb{R}, \; \theta \in \left[0,1\right) $
   \item $ [x+a]= [x] + a, \quad x \in \mathbb{R}, \; a \in \mathbb{Z} $
   \item $ [x]+[-x] = 
@@ -1115,7 +1100,7 @@ $
 \end{example}
 
 \begin{proof}
-  Έστω ότι $ \sqrt{2} + \sqrt{3} $ είναι ρητός. Τότε και ο $ (\sqrt{2} + \sqrt{3} )
+  Έστω ότι $ \sqrt{2} + \sqrt{3} $ είναι ρητός. Τότε και ο $h (\sqrt{2} + \sqrt{3} )
   ^{2} = 2 + 2 \sqrt{6} + 3 = 2 \sqrt{6} + 5 $ είναι ρητός, δηλαδή ο $ \sqrt{6} $ 
   είναι ρητός, άτοπο.
 \end{proof}
@@ -1237,6 +1222,7 @@ $
   $ a < b \Leftrightarrow a - \sqrt{2} < b- \sqrt{2} \overset{\text{Πυκν. Ρητών}}{\Rightarrow} \exists q \in \mathbb{Q} \; : \;  a - \sqrt{2} < q < b - 
   \sqrt{2} \Leftrightarrow  a < \underbrace{q + \sqrt{2}}_{\text{άρρητος}} < b $ 
 \end{proof}
+
 
 
 
