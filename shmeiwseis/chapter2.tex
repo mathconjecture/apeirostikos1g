@@ -817,6 +817,51 @@
           \varepsilon 
         \] 
       \end{proof}
+
+      \item $ \lim_{n \to \infty} (\sqrt{n+1} - \sqrt{n}) =0 $
+        \begin{proof}
+        \item {}
+          \begin{description}
+            \item[Δοκιμή:] 
+              \begin{align} \label{eq:limexfinal1}
+                \abs{(\sqrt{n+1} - \sqrt{n}) - 0} 
+                &< \varepsilon \Leftrightarrow \abs{\sqrt{n+1} - \sqrt{n}} < 
+                \varepsilon 
+                \Leftrightarrow \abs{\frac{(\sqrt{n+1} - \sqrt{n} ) \cdot (\sqrt{n+1} +
+                \sqrt{n})}{\sqrt{n+1} + \sqrt{n}}} < \varepsilon \notag \\
+                &\Leftrightarrow \abs{\frac{(\sqrt{n+1} )^{2} - 
+                    (\sqrt{n}) ^{2}}{\sqrt{n+1}
+                    + \sqrt{n}}} < \varepsilon \Leftrightarrow \abs{\frac{\cancel{n}+1 -
+                    \cancel{n}}{\sqrt{n+1}
+                + \sqrt{n}}} < \varepsilon \Leftrightarrow 
+                \frac{1}{\sqrt{n+1} + \sqrt{n}} < \varepsilon  
+              \end{align}
+
+              Όμως
+              $ \inlineequation[eq:limexfinal2]{\frac{1}{\sqrt{n+1} + \sqrt{n}} < 
+                \frac{1}{\sqrt{n}}, \; \forall n \in \mathbb{N}} $
+
+              Οπότε από τις σχέσεις \eqref{eq:limexfinal1} και 
+              \eqref{eq:limexfinal2} αρκεί $ \frac{1}{\sqrt{n}} < \varepsilon 
+              \Leftrightarrow \sqrt{n} > \frac{1}{\varepsilon} \Leftrightarrow 
+              n > (\frac{1}{\varepsilon})^{2} $
+          \end{description}
+
+          Έστω $ \varepsilon >0 $. Τότε $ \exists n_{0} \in \mathbb{N}
+          $ με $\inlineequation[eq:limexfinal3]{n_{0} > (\frac{1}{\varepsilon})^{2}} $
+          (Αρχ. Ιδιοτ.) τέτοιο ώστε
+          $\inlineequation[eq:limexfinal4]{\forall n \geq n_{0}}$
+          \begin{align*}
+            \abs{(\sqrt{n+1} - \sqrt{n})-0} 
+            &= \abs{\sqrt{n+1} - \sqrt{n}} =  \abs{\frac{(\sqrt{n+1} - \sqrt{n})
+            \cdot (\sqrt{n+1} - \sqrt{n})}{\sqrt{n+1} + \sqrt{n}}} =
+            \cdots = \frac{1}{\sqrt{n+1} + \sqrt{n}} < \\
+            & < \frac{1}{\sqrt{n}} \overset{\eqref{eq:limexfinal4}}{\leq} 
+            \frac{1}{\sqrt{n_{0}}} \overset{\eqref{eq:limexfinal3}}{<}
+            \frac{1}{\sqrt{(\frac{1}{\varepsilon})^{2}}} = \varepsilon 
+          \end{align*} 
+        \end{proof}
+
   \end{enumerate}
 \end{examples}
 
