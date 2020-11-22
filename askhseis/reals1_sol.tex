@@ -28,7 +28,6 @@
 \begin{enumerate}
       \item {\boldmath\textcolor{Col2}{$A = (0,2) $}}
         \begin{proof}(Με Ορισμό)
-        \item {}
           Έχουμε ότι $ \sup A = 2 $ και $ \inf A = 0 $.
           \begin{myitemize}
             \item Θα δείξουμε ότι $ \sup A = 2 $. Πράγματι:
@@ -54,7 +53,6 @@
       \item {\boldmath\textcolor{Col2}{$ A = \{ x \in \mathbb{R} \; 
         : \; x < 0 \} $}}. 
         \begin{proof}(Με Ορισμό)
-        \item {}
           Έχουμε ότι $ \sup A = 0 $ και $ \inf A = - \infty $.
           \begin{myitemize}
             \item Θα δείξουμε ότι $ \sup A = 0 $. Πράγματι:
@@ -156,7 +154,6 @@
     \item \textcolor{Col1}{\label{ask:3z} Να αποδείξετε ότι το σύνολο 
       $ A = \{ 3k \; : \; k \in \mathbb{Z} \} $ δεν είναι άνω φραγμένο.}
       \begin{proof}
-      \item {}
         Πράγματι, έστω $ A $ άνω φραγμένο, και επειδή $A \neq \emptyset $ 
         υπάρχει το supremum του $A$, έστω $ \sup A = s $. Τότε $ s-1 < s $.
         Άρα από τη χαρ. ιδιοτ. του supremum, $ \exists k \in \mathbb{Z}, \; 
@@ -296,7 +293,6 @@
       Έστω ότι ισχύει για $n$, δηλ $ n! >2^{n} $. 
 
       Θ.δ.ο. ισχύει και για $ n+1 $. Πράγματι:
-
       \begin{align*} (n+1)! = 1 \cdot 2 \cdots n \cdot (n+1)  
         =n!(n+1) > 2^{n}(n+1) \geq 2^{n}\cdot 2 = 2^{(n+1)}
       \end{align*}
@@ -323,14 +319,11 @@
 
           Θ.δ.ο. ισχύει για $ n+1 $. Πράγματι:
           \begin{align*}
-            (1+a)^{n+1} &= (1+a)(1+a)^{n} \\
-                        &< (1+a)\cdot \frac{1}{1-na} \\
-                        &= \frac{(1+a)(1-a)}{(1-na)(1-a)} \\
-                        &= \frac{1-a^{2}}{(1-na)(1-a)} \\ 
-                        &= \frac{1-a^{2}}{1-na-a+na^{2}} \\
-                        &= \frac{1-a^{2}}{1-a(n+1)+na^{2}} \\
-                        &< \frac{1-a^{2}}{1-a(n+1)} \\
-                        &< \frac{1}{1-a(n+1)} 
+            (1+a)^{n+1} 
+            &= (1+a)(1+a)^{n} < (1+a)\cdot \frac{1}{1-na} \\
+            &= \frac{(1+a)(1-a)}{(1-na)(1-a)}= \frac{1-a^{2}}{(1-na)(1-a)} \\ 
+            &= \frac{1-a^{2}}{1-na-a+na^{2}} = \frac{1-a^{2}}{1-a(n+1)+na^{2}} \\
+            &< \frac{1-a^{2}}{1-a(n+1)} < \frac{1}{1-a(n+1)} 
           \end{align*}
         \item Αποδεικνύουμε πρώτα ότι $ (1-a)^{n} \leq \frac{1}{1+na}$,
           αν $ 0 \leq a \leq 1 $.

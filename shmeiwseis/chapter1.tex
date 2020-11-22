@@ -771,7 +771,7 @@
 \begin{mybox3}
 \begin{prop}
   Έστω $ A, B $, μη-κενά και φραγμένα υποσύνολα του $ \mathbb{R} $. Τότε: 
-  \begin{enumerate}
+  \begin{enumerate}[i)]
     \item Υπάρχουν τα $ \sup {(A \cup B)} $ και $ \inf {(A \cup B)} $
     \item $ \sup {(A \cup B)} = \max \{ \sup A, \sup B \} $
     \item $ \inf {(A \cup B)} = \min \{ \inf A, \inf B \} $
@@ -813,6 +813,45 @@
   Ομοίως για το infimum.
 \end{proof}
 
+\begin{mybox3}
+\begin{prop}
+  Έστω $A$ και $B$ μη κενά και φραγμένα υποσύνολα του $ \mathbb{R} $, με 
+  $ A \cap B \neq \emptyset $. Να αποδείξετε ότι:
+  \begin{enumerate}[i)]
+    \item Υπάρχουν τα $ \sup {(A \cap B)} $ και $ \inf {(A \cap B)} $
+    \item $ \sup {(A \cap B)} \leq \min \{ \sup A, \sup B \} $
+    \item $ \inf {(A \cap B)} \geq \max \{ \sup A, \sup B \} $
+  \end{enumerate}
+\end{prop}
+\end{mybox3}
+\begin{proof}
+\item Έχουμε, $ A \cap B \subseteq A $ και $ A \cap B \subseteq B $. 
+  Οπότε το σύνολο $ A \cap B $ είναι φραγμένο σύνολο, αφού τα $ A $ και $B$ 
+  είναι φραγμένα. Είναι και μη κενό, οπότε από το αξίωμα Πληρότητας, 
+  υπάρχει το $ \sup {(A \cap B)} $ και το $ \inf {(A \cap B)} $.
+  \begin{enumerate}[label=\roman*),labelindent=0em,leftmargin=*]
+    \item Έχουμε, 
+      \[
+        \left.
+          \begin{matrix}
+            A \cap B \subseteq A\! \Rightarrow\!\sup (A \cap B) \leq \sup A \\
+            A \cap B \subseteq B\! \Rightarrow\!\sup (A \cap B) \leq \sup B \\
+          \end{matrix} 
+          \right\} \!\!\Rightarrow\!\sup {(A \cap B)}\!\leq\!\min \{ \sup\!A,
+        \sup\!B \} 
+      \]
+    \item Έχουμε, 
+      \[
+        \left.
+          \begin{matrix}
+            A \cap B \subseteq A \Rightarrow \inf A \leq \inf (A \cap B) \\
+            A \cap B \subseteq B \Rightarrow \inf B \leq \inf (A \cap B) \\
+          \end{matrix} 
+        \right\}\! \Rightarrow \max \{ \inf A, \inf B \} \leq \inf {(A \cap B)}
+      \]
+  \end{enumerate}
+\end{proof}
+
 \begin{lem}
   \label{lem:vare2}
   Έστω $ x,y \in \mathbb{R} $ και $ x<y+ \varepsilon \quad \forall \varepsilon >0 $. 
@@ -826,20 +865,20 @@
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-  Έστω $ A,B $ μη κενά και φραγμένα υποσύνολα του $ \mathbb{R} $ και έστω 
-  $ A+B= \{ a+b \; : \; a \in A \; \text{και} \; b \in B \} $.
-  Τότε:
-  \begin{enumerate}
-    \item Υπάρχει το $ \sup (A+B) $ και το $ \inf (A+B) $.
-    \item $ \sup {(A+B)}= \sup A + \sup B $
-    \item $ \inf {(A+B)}= \inf A + \inf B $
-  \end{enumerate}
-\end{prop}
+  \begin{prop}
+    Έστω $ A,B $ μη κενά και φραγμένα υποσύνολα του $ \mathbb{R} $ και έστω 
+    $ A+B= \{ a+b \; : \; a \in A \; \text{και} \; b \in B \} $.
+    Τότε:
+    \begin{enumerate}[i)]
+      \item Υπάρχει το $ \sup (A+B) $ και το $ \inf (A+B) $.
+      \item $ \sup {(A+B)}= \sup A + \sup B $
+      \item $ \inf {(A+B)}= \inf A + \inf B $
+    \end{enumerate}
+  \end{prop}
 \end{mybox3}
 \begin{proof}
 \item {}
-  \begin{enumerate}
+  \begin{enumerate}[i)]
     \item $ A \neq \emptyset $ και φραγμένο, άρα από αξίωμα πληρότητας υπάρχουν τα 
       $ \sup A, \inf A $. Ομοίως και για το σύνολο $B$.
       \[
@@ -888,7 +927,7 @@
 \begin{exercise}
   Έστω $ A,B $ μη κενά και φραγμένα υποσύνολα του $ \mathbb{R} $ και έστω 
   \[
-    A-B= \{ a-b \; : \; a \in A \; \text{και} \; b \in B \} . 
+    A-B= \{ a-b \; : \; a \in A \; \text{και} \; b \in B \} \quad \text{και} \quad
     A\cdot B= \{ a\cdot b \; : \; a \in A \; \text{και} \; b \in B \} . 
   \]
   Τότε να εξετάσετε αν ισχύουν οι παρακάτω σχέσεις:
@@ -910,14 +949,14 @@
 
   \twocolumnsides{
     \begin{align*}
-      \sup {(A-B)}&= \sup {(A)+(-B)} \\ 
+      \sup {(A-B)}&= \sup {(A+(-B))} \\ 
                   &= \sup A + \sup (-B) \\
                   &= \sup A + (- \inf B) \\
                   &= \sup A - \inf B
     \end{align*}
     }{
     \begin{align*}
-      \inf {(A-B)}&= \inf {(A)+(-B)} \\ 
+      \inf {(A-B)}&= \inf {(A+(-B))} \\ 
                   &= \inf A + \inf (-B) \\
                   &= \inf A + (- \sup B) \\
                   &= \inf A - \sup B
@@ -937,20 +976,20 @@
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-Έστω $ A,B $ μη κενά και άνω φραγμένα σύνολα θετικών, πραγματικών αριθμών και έστω 
-$ A \cdot B = \{ a\cdot b \; : \; a \in A, b \in B \} $. Τότε υπάρχει το $ \sup {(A
-\cdot B)} $ και ισχύει ότι $ \sup {(A\cdot B)} = \sup A \cdot \sup B $.
-\end{prop}
+  \begin{prop}
+    Έστω $ A,B $ μη κενά και άνω φραγμένα σύνολα θετικών, πραγματικών αριθμών και έστω 
+    $ A \cdot B = \{ a\cdot b \; : \; a \in A, b \in B \} $. Τότε υπάρχει το $ \sup {(A
+    \cdot B)} $ και ισχύει ότι $ \sup {(A\cdot B)} = \sup A \cdot \sup B $.
+  \end{prop}
 \end{mybox3}
 \begin{proof}
   Έχουμε 
   \[
-  \begin{rcases}
-    a \leq \sup A, \quad \forall a \in A \\ 
-    b \leq \sup B, \quad \forall b \in B  
-  \end{rcases} \Rightarrow a\cdot b \leq \sup A \cdot \sup B, 
-  \quad \forall a \in A \; \text{και} \; b \in B
+    \begin{rcases}
+      a \leq \sup A, \quad \forall a \in A \\ 
+      b \leq \sup B, \quad \forall b \in B  
+    \end{rcases} \Rightarrow a\cdot b \leq \sup A \cdot \sup B, 
+    \quad \forall a \in A \; \text{και} \; b \in B
   \]
   Άρα ο αριθμός $ \sup A \cdot \sup B $ είναι άνω φράγμα του συνόλου $ A\cdot B $. 
   Άρα το $ A \cdot B $ είναι άνω φραγμένο, και μη κενό (γιατί $A$, $B$ μη κενά), 
@@ -959,31 +998,31 @@ $ A \cdot B = \{ a\cdot b \; : \; a \in A, b \in B \} $. Τότε υπάρχει
   $ \sup A \cdot \sup B \leq \sup {(A\cdot B)} $. Πράγματι, έστω $ \varepsilon > 1 $, 
   τότε:
   \[
-  \begin{rcases}
-    \exists a \in A \; : \; \frac{\sup A}{\sqrt{\varepsilon}} < a \leq \sup A \\
-    \exists b \in B \; : \; \frac{\sup B}{\sqrt{\varepsilon}} < b \leq \sup B 
-  \end{rcases} \Rightarrow 
-  \frac{\sup A \cdot \sup B}{\sqrt{\varepsilon}} < a \cdot b \leq \sup {(A\cdot B)},
-  \quad \forall a \in A \; \text{και} \; b \in B
-\] 
-Άρα 
-$
+    \begin{rcases}
+      \exists a \in A \; : \; \frac{\sup A}{\sqrt{\varepsilon}} < a \leq \sup A \\
+      \exists b \in B \; : \; \frac{\sup B}{\sqrt{\varepsilon}} < b \leq \sup B 
+    \end{rcases} \Rightarrow 
+    \frac{\sup A \cdot \sup B}{\sqrt{\varepsilon}} < a \cdot b \leq \sup {(A\cdot B)},
+    \quad \forall a \in A \; \text{και} \; b \in B
+  \] 
+  Άρα 
+  $
   \frac{\sup A \cdot \sup B}{\sqrt{\varepsilon}} < \sup {(A\cdot B)}, 
   \quad \forall \varepsilon > 1 \Rightarrow  
   \sup A \cdot \sup B < \varepsilon \cdot \sup {(A\cdot B)}, 
   \quad \forall \varepsilon > 1 \overset{\ref{lem:vare3}}{\Rightarrow}  
   \sup A \cdot \sup B \leq \sup {(A\cdot B)} 
-$ 
+  $ 
 \end{proof}
 
 \section{Ακέραιο Μέρος}
 
 \begin{mybox1}
-\begin{dfn}
-  Έστω $ x \in \mathbb{R} $. Ακέραιο μέρος του $ x $ καλούμε τον 
-  μεγαλύτερο ακέραιο που είναι \textbf{μικρότερος} ή \textbf{ίσος} 
-  με το $x$ και το συμβολίζουμε με $ [x] $.
-\end{dfn}
+  \begin{dfn}
+    Έστω $ x \in \mathbb{R} $. Ακέραιο μέρος του $ x $ καλούμε τον 
+    μεγαλύτερο ακέραιο που είναι \textbf{μικρότερος} ή \textbf{ίσος} 
+    με το $x$ και το συμβολίζουμε με $ [x] $.
+  \end{dfn}
 \end{mybox1}
 
 Το ακέραιο μέρος ενός πραγματικού αριθμού ικανοποιεί τις παρακάτω ιδιότητες:
@@ -1045,9 +1084,9 @@ $
 \end{rem}
 
 \begin{mybox2}
-\begin{thm}
-  Ο $ \sqrt{2} $ είναι άρρητος.
-\end{thm}
+  \begin{thm}
+    Ο $ \sqrt{2} $ είναι άρρητος.
+  \end{thm}
 \end{mybox2}
 
 \begin{proof}
@@ -1093,9 +1132,9 @@ $
 \end{rem}
 
 \begin{mybox3}
-\begin{prop}
-  $ \sqrt{n} $ άρρητος $ \Leftrightarrow n $ όχι τετράγωνο κάποιου φυσικού αριθμού.
-\end{prop}
+  \begin{prop}
+    $ \sqrt{n} $ άρρητος $ \Leftrightarrow n $ όχι τετράγωνο κάποιου φυσικού αριθμού.
+  \end{prop}
 \end{mybox3}
 
 \begin{example}
@@ -1123,15 +1162,15 @@ $
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-  $
-  \left.
-    \begin{tabular}{l}
-      $q$ ρητός \\
-      $r$ άρρητος
-    \end{tabular}
-  \right\}  \Rightarrow (q+r) $ άρρητος
-\end{prop}
+  \begin{prop}
+    $
+    \left.
+      \begin{tabular}{l}
+        $q$ ρητός \\
+        $r$ άρρητος
+      \end{tabular}
+    \right\}  \Rightarrow (q+r) $ άρρητος
+  \end{prop}
 \end{mybox3}
 
 \begin{proof}
@@ -1140,15 +1179,15 @@ $
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-  $
-  \left.
-    \begin{tabular}{l}
-      $r$ άρρητος \\
-      $s$ άρρητος
-    \end{tabular}
-  \right\}  \Rightarrow (r+s) $ ρητός ή άρρητος.
-\end{prop}
+  \begin{prop}
+    $
+    \left.
+      \begin{tabular}{l}
+        $r$ άρρητος \\
+        $s$ άρρητος
+      \end{tabular}
+    \right\}  \Rightarrow (r+s) $ ρητός ή άρρητος.
+  \end{prop}
 \end{mybox3}
 
 \begin{proof}
@@ -1159,18 +1198,18 @@ $
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-  $
-  \left.
-    \begin{tabular}{l}
-      $q$ ρητός \\
-      $r$ άρρητος
+  \begin{prop}
+    $
+    \left.
+      \begin{tabular}{l}
+        $q$ ρητός \\
+        $r$ άρρητος
+      \end{tabular}
+    \right\}  \Rightarrow  $ \begin{tabular}{l}
+      $ (q \cdot r) $ ρητός $ \Leftrightarrow q =0 $ \\
+      $(q \cdot r)$   άρρητος $ \Leftrightarrow q \neq 0 $
     \end{tabular}
-  \right\}  \Rightarrow  $ \begin{tabular}{l}
-    $ (q \cdot r) $ ρητός $ \Leftrightarrow q =0 $ \\
-    $(q \cdot r)$   άρρητος $ \Leftrightarrow q \neq 0 $
-  \end{tabular}
-\end{prop}
+  \end{prop}
 \end{mybox3}
 \begin{proof}
   Πράγματι, αν $ q=0 $ (ρητός) και $ r $ άρρητος, τότε $ q \cdot r =0 $ είναι ρητός, 
@@ -1203,9 +1242,9 @@ $
 \section{Πυκνότητα Ρητών και Άρρητων}
 
 \begin{mybox3}
-\begin{prop}
-  Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει ρητός.
-\end{prop}
+  \begin{prop}
+    Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει ρητός.
+  \end{prop}
 \end{mybox3}
 
 \begin{proof}
@@ -1225,9 +1264,9 @@ $
 \end{proof}
 
 \begin{mybox3}
-\begin{prop}
-  Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει άρρητος.
-\end{prop}
+  \begin{prop}
+    Σε κάθε ανοιχτό διάστημα πραγματικών αριθμών, υπάρχει άρρητος.
+  \end{prop}
 \end{mybox3}
 
 \begin{proof}

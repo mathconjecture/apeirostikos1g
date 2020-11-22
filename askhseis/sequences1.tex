@@ -1,8 +1,8 @@
-\input{preamble.tex}
-\input{definitions.tex}
+\input{preamble_ask.tex}
+\input{definitions_ask.tex}
 
 \everymath{\displaystyle}
-\pagestyle{vangelis}
+\pagestyle{askhseis}
 
 \begin{document}
 
@@ -34,7 +34,7 @@
     φραγμένη. 
     \hfill Απ: $ 0 \leq a_{n} \leq 1 $ 
   \item Να δείξετε ότι η ακολουθία $ a_{n} = 1 + \frac{1}{1!} +
-    \frac{1}{2!} + \frac{1}{n!} $ είναι άνω φραγμένη.
+    \frac{1}{2!} + \cdots + \frac{1}{n!} $ είναι άνω φραγμένη.
     \hfill Απ: $ a_{n} < 3 $ 
     % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{3 \sin{3n}}{n^{2}} $ 
     % είναι φραγμένη.
@@ -45,12 +45,13 @@
   \item Να δείξετε ότι η ακολουθία $ a_{1} = \sqrt{2}, \; a_{n+1} =
     \sqrt{2+ a_{n}}, \; \forall n \in \mathbb{N} $ είναι φραγμένη.
     \hfill Απ: $ 0 < a_{n} < 2$ 
+  \item Να δείξετε ότι η ακολουθία $ a_{n} = 3-2n $ δεν είναι κάτω φραγμένη. 
   \item Να δείξετε ότι η ακολουθία $ a_{n} = 2^{n} $ δεν είναι άνω 
     φραγμένη.
     % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{3} + \sin{5n}}{n} $ δεν είναι 
     %     φραγμένη.
-  \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{2}}{3n+ \sin^{2}{n}} $ δεν 
-    είναι άνω φραγμένη.
+  % \item Να δείξετε ότι η ακολουθία $ a_{n} = \frac{n^{2}}{3n+ \sin^{2}{n}} $ δεν 
+    % είναι άνω φραγμένη.
 \end{enumerate}
 
 \section{Μονότονες Ακολουθίες}
@@ -58,12 +59,12 @@
 \begin{enumerate}
   \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{5n-1} $ είναι 
     γνησίως φθίνουσα.
+  \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{2n^{2}-1}{n} $ είναι γνησίως 
+    αύξουσα.
   \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{n}{3^{n}} $ είναι 
     γνησίως φθίνουσα.
   \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{2^{n}}{n!} $ είναι 
     γνησίως φθίνουσα.
-  \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{2n^{2}-1}{n} $ είναι γνησίως 
-    αύξουσα.
   \item Να δείξετε ότι η ακολουθία $ a_{1}=0, \; a_{n+1}= 
     \frac{2 a_{n}+4}{3}, \; \forall n \in \mathbb{N} $ είναι γνησίως αύξουσα.
   \item Να δείξετε ότι ακολουθία $ a_{1}=1, \; a_{n} = \sqrt{a_{n}+1}, \; 
@@ -71,7 +72,7 @@
     % \item Να δείξετε ότι ακολουθία $ a_{n} = \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} 
     % + \cdots + \frac{1}{n(n+1)} $ είναι γνησίως αύξουσα.
   \item Να δείξετε ότι ακολουθία $ a_{n} =  \frac{(-1)^{n}}{n^{2}+2} $ 
-    δεν είναι μονότονη.
+    δεν είναι μονότονη. 
 \end{enumerate}
 
 \section{Ορισμός του Ορίου}
@@ -84,7 +85,7 @@
       \item $ \lim_{n \to \infty} \frac{3n -2}{2n+1} = \frac{3}{2} $ 
       \item $ \lim_{n \to \infty} \frac{5n-4}{2-3n} = - \frac{5}{3} $ 
       \item $ \lim_{n \to \infty} \frac{n^{2}+n}{n^{2}+3} = 1 $ 
-      \item $ \lim_{n \to \infty} \frac{\sin{\frac{n^{3}}{3}}}{n^{3}} $
+      \item $ \lim_{n \to \infty} \frac{\sin{\frac{n^{3}}{3}}}{n^{3}}=0 $
       \item $ \lim_{n \to \infty} \frac{\sin{n} + \cos{3n}}{n^{2}} = 0 $
       \item $ \lim_{n \to \infty} (\sqrt{n+2} - \sqrt{n}) = 0 $
     \end{enumerate}
