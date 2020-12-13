@@ -1,6 +1,7 @@
 \input{preamble.tex}
 \input{definitions.tex}
 \input{tikz.tex}
+\input{myboxes.tex}
 
 
 \setcounter{chapter}{3}
@@ -9,7 +10,9 @@
 \section{Ορισμός}
 
 
-\mydfn{Έστω $ {(a_{n})}_{n \in \mathbb{N}}$ ακολουθία. Τότε ορίζουμε την ακολουϑία 
+\begin{mybox1}
+\begin{dfn}
+Έστω $ {(a_{n})}_{n \in \mathbb{N}}$ ακολουθία. Τότε ορίζουμε την ακολουϑία 
 \begin{align*}
     S_{1} &= a_{1} \\
     S_{2} &= a_{1}+ a_{2} \\
@@ -23,7 +26,9 @@
 \textcolor{Col2}{σειρά} και συμβολίζεται
 $
     \sum_{n=1}^{\infty} a_{n} 
-$}
+$
+\end{dfn}
+\end{mybox1}
 
 \begin{rem}
 Οι όροι της ακολουθίας $ {(S_{N})}_{N \in \mathbb{N}} $ ονομάζονται 
@@ -64,6 +69,8 @@ $}
 
 \section{Σύγκλιση Σειρών}
 
+\begin{mybox1}
+\begin{dfn}
 Έστω $ \sum_{n=1}^{\infty} a_{n}  $ σειρά και έστω $ {(S_{n})}_{n \in \mathbb{N}} $ 
 η ακολουθία των μερικών αθροισμάτων της. 
 
@@ -74,9 +81,118 @@ $ S \in \mathbb{R} $, ο οποίος
 \[
     \sum_{n=1}^{\infty} a_{n} = S \Leftrightarrow \lim_{n \to \infty} S_{n} = S  
 \] 
+\end{dfn}
+\end{mybox1}
+
+\begin{rem}
+\item {}
+  \begin{myitemize}
+    \item Αν $ \lim_{n \to \infty} S_{n} = + \infty $, τότε λέμε ότι η σειρά
+      \textcolor{Col1}{απειρίζεται
+      θετικά} και γράφουμε $ \sum_{n=1}^{\infty} a_{n} = + \infty $.
+    \item Αν $ \lim_{n \to \infty} S_{n} = - \infty $, τότε λέμε ότι η σειρά
+      \textcolor{Col1}{απειρίζεται
+      αρνητικά} και γράφουμε $ \sum_{n=1}^{\infty} a_{n} = - \infty $.
+    \item Αν δεν υπάρχει το $ \lim_{n \to \infty} S_{n} $, ή $ \lim_{n \to \infty} S_{n}=
+      \pm \infty$, τότε λέμε ότι η σειρά \textcolor{Col1}{αποκλίνει}.
+
+  \end{myitemize}
+\end{rem}
+
+\begin{example}
+  Να αποδείξετε ότι η σειρά $ \sum_{n=1}^{\infty} (-1)^{n} $ αποκλίνει.
+\end{example}
+  \begin{proof}
+    Θεωρούμε την ακολουθία $ {(S_{n})}_{n=2}^{\infty} $, όπου $ S_{n}= a_{2}+ a_{3} +
+    \cdots a_{n}, \; \forall n \in \mathbb{N} $ και έχουμε
+  \begin{align*}
+    S_{2} &= a_{2} = (-1)^{2}=1 \\
+    S_{3} &= a_{2}+ a_{3} = 1 + (-1)^{3} = 0 \\
+    S_{4} &= a_{2}+ a_{3} + a_{4} = 0 + (-1)^{4} = 1 \\
+    &\vdots \\
+    S_{n} &= 
+    \begin{cases}
+      1,  &n \; \text{άρτιος} \\
+      0,  &n \; \text{περιττός} 
+    \end{cases}
+   \end{align*} 
+ Οπότε, έχουμε δύο διαφορετικές ακολουθίες, της $ {(S_{n})}_{n=2}^{\infty} $ 
+ που συγκλίνουν σε διαφορετικό αριθμό, επομένως, δεν υπάρχει το 
+ $ \lim_{n \to \infty} S_{n} $, άρα η σειρά $ \sum_{n=1}^{\infty} (-1)^{n} $ αποκλίνει.
+  \end{proof}
+
+\begin{example}
+  Να αποδείξετε ότι η σειρά $ \sum_{n=1}^{\infty} \frac{1}{3^{n}} $ συγκλίνει.
+\end{example}
+\begin{proof}
+  Θεωρούμε την ακολουθία $ {(S_{n})}_{n \in \mathbb{N}} $, όπου $ S_{n}= a_{1}+ a_{2} +
+  \cdots a_{n}, \; \forall n \in \mathbb{N} $. 
+  Παρατηρούμε ότι ο $ S_{n} $ είναι το άθροισμα των $n$ πρώτων όρων της γεωμετρικής 
+  προόδου
+  $ (\frac{1}{3^{n}})_{n \in \mathbb{N}} $, άρα όπως είναι γνωστό, έχουμε
+  \[
+    S_{n} = \sum_{k=1}^{n} a_{n} = a_{1} \cdot \frac{\lambda ^{n}-1}{\lambda -1} = 
+    \frac{1}{3} \cdot \frac{(\frac{1}{3} )^{n}-1}{\frac{1}{3} - 1} 
+    = \frac{1}{\cancel{3}} \cdot \frac{\frac{1}{3^{n}} - 1}{- \frac{2}{\cancel{3}}} 
+    = \frac{1}{2} \cdot \left(1 - \frac{1}{3^{n}}\right)
+  \] 
+  Άρα
+  \[ 
+    \lim_{n \to \infty} S_{n} = \lim_{n \to \infty} \frac{1}{2} \cdot 
+    \left(1 - \frac{1}{3^{n}}\right) = \frac{1}{2} \cdot \lim_{n \to \infty} 
+    \left(1 - \frac{1}{3^{n}}\right) = \frac{1}{2} \cdot (1-0) = \frac{1}{2}
+  \]
+  Επομένως, η σειρά συγκλίνει και μάλιστα 
+  $ \sum_{n=1}^{\infty} \frac{1}{3^{n}} = \frac{1}{2} $
+\end{proof}
+
+\begin{mybox3}
+\begin{prop}
+  \begin{enumerate}[i)]
+    \mbox{}
+    \item $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
+      $ \Leftrightarrow \sum_{n= n_{0}}^{\infty} a_{n}, \; \; \forall n_{0} 
+      \in \mathbb{N}  $ συγκλίνει.
+    \item\label{prop:diff2} $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
+      $ \Rightarrow \sum_{n=1}^{\infty} a_{n} - \sum_{n= n_{0}}^{\infty} a_{n}  
+      = \sum_{n=1}^{n_{0}-1} a_{n} $
+  \end{enumerate}
+  \label{prop:diff}
+\end{prop}
+\end{mybox3}
+\begin{proof}
+\item {}
+    \begin{enumerate}
+        \item Θέτουμε $ S_{N} = \sum_{n=1}^{N} a_{n}, \; 
+            \forall N \in \mathbb{N} $ και $ T_{N} = \sum_{n= n_{0}}^{N}, \; N= n_{0}, 
+            n_{0}+1, \ldots $. Τότε για $ n \geq n_{0} $ έχουμε:
+            \[
+                S_{N}-T_{N} = a_{1}+ a_{2}+ a_{3}+ \cdots + a_{n_0-1} 
+            \] 
+            Δηλαδή οι ακολουθίες $ (S_{N})_{N \in \mathbb{N}} $ και 
+            $ (T_{N})_{n \in \mathbb{N}} $ διαφέρουν κατά σταθερά. Σύμφωνα 
+            με τις ιδιότητες των ορίων, αν συγκλίνει η μία τότε συγκλίνει και η άλλη.
+
+        \item Ας υποθέσουμε ότι η σειρά $ \sum_{n=1}^{\infty} $ συγκλίνει, 
+            δηλαδή ότι η ακολουθία $ (S_{N})_{N \in \mathbb{N}} $ συγκλίνει. 
+
+            Τότε σύμφωνα με το πρώτο ερώτημα και η $ (T_{N})_{N \in \mathbb{N}} $
+            συγκλίνει και μάλιστα $ \lim_{N \to \infty} S_{N} = \lim_{N \to \infty} 
+            T_{N} + a_{1}+ a_{2} + \cdots + a_{n_{0}-1} 
+            \Rightarrow \sum_{n=1}^{\infty} a_{n}- \sum_{n= n_{0}}^{\infty} a_{n} = 
+            \sum_{n=1}^{n_{0}-1} a_{n}    $
+    \end{enumerate}
+\end{proof}
+
+\begin{rem}
+  Σύμφωνα με την  πρόταση~\ref{prop:diff}, η πρόσθεση ή η αφαίρεση πεπερασμένου 
+  πλήθους όρων, σε μία συγκλίνουσα σειρά, δεν επηρεάζει τη σύγκλισή της. Προσοχή, όμως,
+  γιατί επηρεάζει το άθροισμά της.
+\end{rem}
 
 \section{Τηλεσκοπικές Σειρές}
 
+\begin{mybox1}
 \begin{dfn}
     Οι σειρές $ \sum_{n=1}^{\infty} a_{n} $ των οποίων 
     οι όροι γράφονται στη μορφή 
@@ -84,6 +200,7 @@ $ S \in \mathbb{R} $, ο οποίος
     $ {(b_{n})}_{n \in \mathbb{N}}$, μπορεί να υπολογιστεί το όριο της, λέγονται 
     τηλεσκοπικές.
 \end{dfn}
+\end{mybox1}
 
 \begin{examples}
 \item {}
@@ -132,13 +249,14 @@ $ S \in \mathbb{R} $, ο οποίος
                 \] 
                 Υπολογίζουμε την ακολουθία των μερικών αθροισμάτων και έχουμε
                 \begin{align*}
-                    S_{1} &= \ln{1} - \ln{2} = - \ln{2}  \\
-                    S_{2} &= \ln{1} - \ln{2} + \ln{2} - \ln{3} = - \ln{3}  \\
-                    S_{3} &= \ln{1} - \ln{2} + \ln{2} - \ln{3} + \ln{3} - \ln{4} = - 
-                    \ln{4}\\
-                    \vdots \\
-                    S_{n} &= - \ln{(n+1)} \\
-                    \vdots
+                  S_{1} &= \ln{1} - \ln{2} = - \ln{2}  \\
+                  S_{2} &= \ln{1} - \cancel{\ln{2}} + \cancel{\ln{2}} - \ln{3} 
+                  = - \ln{3}  \\
+                  S_{3} &= \ln{1} - \cancel{\ln{2}} + \cancel{\ln{2}} -
+                  \bcancel{\ln{3}} + \bcancel{\ln{3}} - \ln{4} = - \ln{4} \\
+                  \vdots \\
+                  S_{n} &= - \ln{(n+1)} \\
+                  \vdots
                 \end{align*}
                 επομένως $ \lim_{n \to \infty} S_{n} = 
                 \lim_{n \to \infty} (- \ln{(n+1)}) = - \infty $ οπότε η σειρά αποκλίνει.
@@ -147,63 +265,30 @@ $ S \in \mathbb{R} $, ο οποίος
 \end{examples}
 
 
-
-
-\myprop{\label{prop:diff}
-    \begin{enumerate}[i)]
-        \item $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
-            $ \Leftrightarrow \sum_{n= n_{0}}^{\infty} a_{n}, \; \; \forall n_{0} 
-            \in \mathbb{N}  $ συγκλίνει.
-        \item\label{prop:diff2} $ \sum_{n=1}^{\infty} a_{n}  $ συγκλίνει 
-            $ \Rightarrow \sum_{n=1}^{\infty} a_{n} - \sum_{n= n_{0}}^{\infty} a_{n}  
-            = \sum_{n=1}^{n_{0}-1} a_{n} $
-    \end{enumerate}
-}
-
-\begin{proof}
-\item {}
-    \begin{enumerate}
-        \item Θέτουμε $ S_{N} = \sum_{n=1}^{N} a_{n}, \; 
-            \forall N \in \mathbb{N} $ και $ T_{N} = \sum_{n= n_{0}}^{N}, \; N= n_{0}, 
-            n_{0}+1, \ldots $. Τότε για $ n \geq n_{0} $ έχουμε:
-            \[
-                S_{N}-T_{N} = a_{1}+ a_{2}+ a_{3}+ \cdots + a_{n_0-1} 
-            \] 
-            Δηλαδή οι ακολουθίες $ (S_{N})_{N \in \mathbb{N}} $ και 
-            $ (T_{N})_{n \in \mathbb{N}} $ διαφέρουν κατά σταθερά. Σύμφωνα 
-            με τις ιδιότητες των ορίων, αν συγκλίνει η μία τότε συγκλίνει και η άλλη.
-
-        \item Ας υποθέσουμε ότι η σειρά $ \sum_{n=1}^{\infty} $ συγκλίνει, 
-            δηλαδή ότι η ακολουθία $ (S_{N})_{N \in \mathbb{N}} $ συγκλίνει. 
-
-            Τότε σύμφωνα με το πρώτο ερώτημα και η $ (T_{N})_{N \in \mathbb{N}} $
-            συγκλίνει και μάλιστα $ \lim_{N \to \infty} S_{N} = \lim_{N \to \infty} 
-            T_{N} + a_{1}+ a_{2} + \cdots + a_{n_{0}-1} 
-            \Rightarrow \sum_{n=1}^{\infty} a_{n}- \sum_{n= n_{0}}^{\infty} a_{n} = 
-            \sum_{n=1}^{n_{0}-1} a_{n}    $
-    \end{enumerate}
-\end{proof}
-
 \begin{example}
     Να υπολογιστεί το άθροισμα της σειράς $ \sum_{n=3}^{\infty} \frac{1}{n(n+1)} $.
 \end{example}
 \begin{proof}
+  Σύμφωνα με την πρόταση~\ref{prop:diff}, έχουμε:
     \[
         \sum_{n=3}^{\infty} \frac{1}{n(n+1)} = \sum_{n=1}^{\infty} 
-        \frac{1}{n(n+1)} - \sum_{n=1}^{2} \frac{1}{n(n+1)} = 1 - \frac{1}{2} - 
-        \frac{1}{6} = \frac{2}{6} = \frac{1}{3}
+        \frac{1}{n(n+1)} - \sum_{n=1}^{2} \frac{1}{n(n+1)} = 1 - \left(\frac{1}{2} + 
+        \frac{1}{6}\right) = \frac{2}{6} = \frac{1}{3}
     \] 
 \end{proof}
 
 
 \section{Γεωμετρική Σειρά}
 
-Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ λέγεται Γεωμετρική και ο αριθμός $x$ λέγεται 
-λόγος της.
+Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ λέγεται \textcolor{Col1}{Γεωμετρική} και ο αριθμός
+$x$ λέγεται \textcolor{Col1}{λόγος} της.
 
-\myprop{Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ συγκλίνει $ \Leftrightarrow \abs{x} < 1 $
-και ισχύει ότι $ \sum_{n=0}^{\infty} x^{n} = \frac{1}{1-x} $}
-
+\begin{mybox3}
+\begin{prop}
+Η σειρά $ \sum_{n=0}^{\infty} x^{n} $ συγκλίνει $ \Leftrightarrow \abs{x} < 1 $
+και ισχύει ότι $ \sum_{n=0}^{\infty} x^{n} = \frac{1}{1-x} $
+\end{prop}
+\end{mybox3}
 \begin{proof}
 \item {}
     Ισχύει ότι $ S_{N} = \sum_{n=0}^{N} x^{n} =  1 + x + x^{2} + \cdots x^{N} = 
@@ -213,10 +298,12 @@ $ S \in \mathbb{R} $, ο οποίος
     $ \lim_{n \to \infty} S_{N} = \frac{1}{1-x} $.
 \end{proof}
 
+\begin{mybox3}
 \begin{cor}
     Η σειρά $ \sum_{n= n_{0}}^{\infty} x^{n} $ συγκλίνει $ \Leftrightarrow \abs{x} <1 $
     και ισχύει ότι $ \sum_{n= n_{0}}^{\infty} x^{n} = \frac{x^{n_{0}}}{1-x} $.
 \end{cor}
+\end{mybox3}
 \begin{proof}
 \item {}
     Αν $ \abs{x} < 1 $ τότε η σειρά $ \sum_{n=0}^{\infty} x^{n} $ συγκλίνει ως 
@@ -314,10 +401,10 @@ $ S \in \mathbb{R} $, ο οποίος
                 Όμως 
                 \begin{align*}
                     \sum_{n=1}^{\infty} \left(\frac{1}{2} \right)^{n-1} 
-                    &= \frac{1}{1- \frac{1}{2}} = 2
-                    \intertext{και}
+                    = \frac{1}{1- \frac{1}{2}} = 2
+                    \quad \text{και} \quad
                     \sum_{n=1}^{\infty} \left(\frac{1}{6} \right)^{n-1} 
-                    &= \frac{1}{1- \frac{1}{6}} = \frac{6}{5} 
+                    = \frac{1}{1- \frac{1}{6}} = \frac{6}{5} 
                 \end{align*} 
                 Επειδή και οι δύο σειρές συγκλίνουν τότε από την προηγούμενη 
                 πρόταση έχουμε ότι 
