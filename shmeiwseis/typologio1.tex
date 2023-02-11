@@ -1,5 +1,5 @@
-\input{../frontmatter/preamble_a4.tex}
-\input{../frontmatter/definitions.tex}
+\input{preamble_typ.tex}
+\input{definitions_typ.tex}
 \input{tikz.tex}
 
 
@@ -148,10 +148,12 @@
         \item $ \inf {(A \cup B)} = \min \{ \inf A, \inf B \} $ 
         \item $ \sup {(A+B)} = \sup A + \sup B $
         \item $ \inf {(A+B)} = \inf A + \inf B $
+        \item $ \sup {(A-B)} = \sup A - \inf B $
+        \item $ \inf {(A-B)} = \inf A - \sup B $
         \item $ \sup {(A\cdot B)} = \sup A \cdot \sup B $ \tikzmark{a}
         \item $ \inf {(A\cdot B)} = \inf A \cdot \inf B $ \;\;\, \tikzmark{b}
       \end{myitemize}
-      \mybrace{a}{b}[αν $ A,B \subseteq \mathbb{R}^{+} $]
+      \mybracee{a}{b}[αν $ A,B \subseteq \mathbb{R}^{+} $]
     }{
     \section{Ρητοί και Άρρητοι}
     \begin{myitemize}

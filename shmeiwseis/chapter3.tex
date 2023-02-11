@@ -3,11 +3,13 @@
 \input{tikz.tex}
 \input{myboxes.tex}
 
+\pagestyle{askhseis}
 
-\setcounter{chapter}{3}
+\setcounter{chapter}{2}
 \begin{document}
 
-\section{Ορισμός}
+\chapter{Σειρές}
+
 
 
 \begin{mybox1}
@@ -131,7 +133,7 @@ $ S \in \mathbb{R} $, ο οποίος
   προόδου
   $ (\frac{1}{3^{n}})_{n \in \mathbb{N}} $, άρα όπως είναι γνωστό, έχουμε
   \[
-    S_{n} = \sum_{k=1}^{n} a_{n} = a_{1} \cdot \frac{\lambda ^{n}-1}{\lambda -1} = 
+    S_{n} = a_{1} \cdot \frac{\lambda ^{n}-1}{\lambda -1} = 
     \frac{1}{3} \cdot \frac{(\frac{1}{3} )^{n}-1}{\frac{1}{3} - 1} 
     = \frac{1}{\cancel{3}} \cdot \frac{\frac{1}{3^{n}} - 1}{- \frac{2}{\cancel{3}}} 
     = \frac{1}{2} \cdot \left(1 - \frac{1}{3^{n}}\right)
@@ -189,6 +191,41 @@ $ S \in \mathbb{R} $, ο οποίος
   πλήθους όρων, σε μία συγκλίνουσα σειρά, δεν επηρεάζει τη σύγκλισή της. Προσοχή, όμως,
   γιατί επηρεάζει το άθροισμά της.
 \end{rem}
+
+\begin{mybox3}
+\begin{prop}
+  Έστω $ \sum_{n=1}^{\infty} a_{n} $ σειρά πραγματικών αριθμών και έστω $ a_{n} \geq 0,
+  \; \forall n \in \mathbb{N} $. Τότε $ \sum_{n=1}^{\infty} a_{n} = S \in \mathbb{R} $ 
+  ή $ \sum_{n=1}^{\infty} = + \infty $.
+\end{prop}
+\end{mybox3}
+\begin{proof}
+  Θεωρούμε την ακολουθία των μερικών αθροισμάτων $ (S_{n})_{n \in \mathbb{N}} $, 
+  όπου $ S_{n} = a_{1}+ \cdots + a_{n} $. Παρατηρούμε ότι
+  \[
+    S_{n} = a_{1}+ \cdots + a_{n} \leq a_{1}+ \cdots + a_{n}+ a_{n+1} = S_{n+1} , 
+    \; \forall n \in \mathbb{N}
+   \] 
+   Άρα η ακολουθία $ (S_{n})_{n \in \mathbb{N}} $ είναι αύξουσα. Υπάρχουν δύο
+   περιπτώσεις: 
+   \begin{description}
+     \item [1η Περίπτωση:] $ {(S_{n})}_{n \in \mathbb{N}} $ μη φραγμένη, οπότε 
+       $ \sum_{n=1}^{\infty} a_{n} = \lim_{n \to \infty} S_{n} = + \infty $ 
+     \item [2η Περίπτωση:] $ {(S_{n})}_{n \in \mathbb{N}} $ φραγμένη, οπότε
+       $ \sum_{n=1}^{\infty} a_{n} = \lim_{n \to \infty} S_{n} = S \in \mathbb{R} $,
+       όπου $ S = \sup \{ S_{n} \} \in \mathbb{R} $.
+   \end{description}
+\end{proof}
+
+\begin{rem}
+    Μια σειρά στην οποία δεν γνωρίζουμε τα πρόσημα των όρων της, μπορεί:
+    \begin{enumerate}[i)]
+        \item να συγκλίνει
+        \item να αποκλίνει στο $ + \infty $ ή στο $ - \infty $
+        \item τίποτε από τα παραπάνω.
+    \end{enumerate}
+\end{rem}
+
 
 \section{Τηλεσκοπικές Σειρές}
 
@@ -312,7 +349,7 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     Οπότε έχουμε
     \begin{align*}
         \sum_{n=0}^{\infty} x^{n} - \sum_{n= n_{0}}^{\infty} x^{n} = 
-        \sum_{n= 1}^{n_{0} -1} x^{n} = 1 + x + x^{2} + \cdots + x^{n_{0}-1} 
+        \sum_{n= 0}^{n_{0} -1} x^{n} = 1 + x + x^{2} + \cdots + x^{n_{0}-1} 
         \Rightarrow \\
         \sum_{n= n_{0}}^{\infty} x^{n} = \sum_{n=0}^{\infty} x^{n} - (1 + x + x^{2} + 
         \cdots + x^{n_{0}-1}) = \frac{1}{1-x} - \frac{1- x^{n_{0}}}{1-x} = 
@@ -344,12 +381,16 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \]
 \end{examples}
 
-\myprop{Έστω $ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty} b_{n} = b $ 
-    συγκλίνουσες σειρές. Τότε:
-    \begin{enumerate}[i)]
-        \item $ \sum_{n=1}^{\infty} (a_{n}+b_{n}) = a+b $
-        \item $ \sum_{n=1}^{\infty} (k\cdot a_{n}) = k\cdot a $ 
-\end{enumerate}}
+\begin{mybox3}
+\begin{prop}
+  Έστω $ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty} b_{n} = b $ 
+  συγκλίνουσες σειρές. Τότε:
+  \begin{enumerate}[i)]
+    \item $ \sum_{n=1}^{\infty} (a_{n}+b_{n}) = a+b $
+    \item $ \sum_{n=1}^{\infty} (k\cdot a_{n}) = k\cdot a $ 
+  \end{enumerate} \label{prop:sum1}
+\end{prop}
+\end{mybox3}
 
 \begin{example}
     \begin{enumerate}
@@ -418,6 +459,21 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{enumerate}
 \end{example}
 
+\begin{mybox3}
+\begin{prop}
+  Αν $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει και $ \sum_{n=1}^{\infty} b_{n} $ 
+  αποκλίνει, τότε η σειρά $ \sum_{n=1}^{\infty} (a_{n}+b_{n}) $ αποκλίνει.
+\end{prop}
+\end{mybox3}
+\begin{proof}(Με άτοπο)
+
+  Έστω ότι η $ \sum_{n=1}^{\infty} (a_{n}+b_{n}) $ συγκλίνει. Τότε, επειδή $
+  \sum_{n=1}^{\infty} - a_{n} $ επίσης συγκλίνει, θα έχουμε, από την
+  πρόταση~\ref{prop:sum1}, ότι $ \sum_{n=1}^{\infty} (a_{n}+b_{n} - a_{n}) = 
+  \sum_{n=1}^{\infty} b_{n} $ συγκλίνει, άτοπο.
+\end{proof}
+
+
 \begin{rem}
     Έστω ότι $ \sum_{n=1}^{\infty} a_{n} = a $ και $ \sum_{n=1}^{\infty} b_{n} = b $, 
     με $ b_{n} \neq 0, \; \forall n \in \mathbb{N} $ και $ b \neq 0 $. Τότε η σειρά 
@@ -443,7 +499,7 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
 
             \item Έστω οι σειρές 
 
-                \begin{minipage}{0.75\textwidth}
+                \begin{minipage}{0.70\textwidth}
                     \begin{myitemize}
                     \item 
                         $ \sum_{n=1}^{\infty} \underbrace{\frac{1}{2^{2n-1}}}_{a_{n}} 
@@ -478,9 +534,13 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{proof}
 \end{rem}
 
-\myprop{Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε 
+\begin{mybox3}
+\begin{prop}
+Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε 
     $ \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} :
-\quad \abs{\sum_{n= n_{0}}^{\infty} a_{n}} < \varepsilon $}
+\quad \abs{\sum_{n= n_{0}}^{\infty} a_{n}} < \varepsilon $
+\end{prop}
+\end{mybox3}
 
 \begin{proof}
 \item {}
@@ -502,7 +562,11 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{gather*} 
 \end{proof}
 
-\myprop{Η αρμονική σειρά $ \sum_{n=1}^{\infty} \frac{1}{n} $ δεν συγκλίνει.}
+\begin{mybox3}
+\begin{prop}
+Η αρμονική σειρά $ \sum_{n=1}^{\infty} \frac{1}{n} $ δεν συγκλίνει.
+\end{prop}
+\end{mybox3}
 
 \begin{proof}(Με άτοπο)
 \item {}
@@ -510,13 +574,8 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     $ \sum_{n=1}^{\infty} \frac{1}{n} 
     = S \in \mathbb{R} \Leftrightarrow \lim_{n \to \infty} {(S_{n})}_{n \in \mathbb{N}} 
     = S $, δηλαδή 
-    \[
-        \forall \varepsilon >0, \; \exists n_{0} \in \mathbb{N} \; : \; \forall n 
-        \geq n_{0} \quad \abs{S_{n}-S} 
-        < \varepsilon 
-    \]
-    Οπότε για $ \varepsilon = \frac{1}{4}, \; \exists n_{0} \in \mathbb{N} \; : \; 
-    \forall n \geq n_{0} \quad \abs{S_{n}-S} < \frac{1}{4} $, και 
+    για $ \varepsilon = \frac{1}{4}, \; \exists n_{0} \in \mathbb{N} \; : \; 
+    \forall n \geq n_{0} \quad \abs{S_{n}-S} < \frac{1}{4} $, άρα  και 
     $ \abs{S_{2 n_{0}}-S} < \frac{1}{4}  $ επειδή και κάθε  υπακολουθία της 
     $ {(S_{n})}_{n \in \mathbb{N}} $ θα συγκλίνει στο ίδιο όριο.
     Επομένως
@@ -538,47 +597,6 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{align*}
 \end{proof}
 
-\mythm{Έστω $ \sum_{n=1}^{\infty} a_{n} $ σειρά θετικών όρων, δηλαδή $ a_{n} \geq 0, 
-    \; \forall n \in \mathbb{N} $. Τότε η $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
-αν και μόνον αν είναι άνω φραγμένη.}
-
-\begin{proof}
-\item {}
-    \begin{description}
-        \item [($ \Rightarrow $)]
-            Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε η ακολουθία 
-            $ {(S_{n})}_{n \in \mathbb{N}} $ συγκλίνει, επομένως από γνωστή πρόταση θα 
-            είναι και φραγμένη, επομένως και άνω φραγμένη. Άρα και η σειρά 
-            $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη.
-        \item [($ \Leftarrow $)]
-            Έστω ότι η σειρά $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη, δηλαδή 
-            η ακολουθία $ {(S_{n})}_{n \in \mathbb{N}} $ είναι άνω φραγμένη, δηλαδή 
-            \[
-                S_{n} \leq M, \; \forall n \in \mathbb{N}
-            \] 
-            Θα δείξουμε ότι η ακολουθία $ {(S_{n})}_{n \in \mathbb{N}} $ είναι και 
-            αύξουσα, οπότε από γνωστή πρόταση, θα συγκλίνει. Πράγματι
-            έστω $ n_{0} \in \mathbb{N} $. Τότε
-            \[
-                a_{n_{0}+1} \geq 0 \Rightarrow S_{n_{0}+1} - S_{n_{0}} \geq 0 
-                \Rightarrow S_{n_{0}+1} \geq S_{n_{0}}
-            \] 
-    \end{description}
-\end{proof}
-
-\begin{cor}
-    Μια σειρά θετικών όρων ή συγκλίνει, ή αποκλίνει στο $ + \infty $.  
-\end{cor}
-
-\begin{rem}
-    Μια σειρά στην οποία δεν γνωρίζουμε τα πρόσημα των όρων της, μπορεί:
-    \begin{enumerate}[i)]
-        \item να συγκλίνει
-        \item να αποκλίνει στο $ + \infty $ ή στο $ - \infty $
-        \item τίποτε από τα παραπάνω.
-    \end{enumerate}
-\end{rem}
-
 
 
 \section{Κριτήρια Σύγκλισης}
@@ -591,28 +609,12 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \item $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 
         b_{n} $ αποκλίνει.
 \end{enumerate}
-\begin{proof}
-\item {}
-    \begin{enumerate}[i)]
-        \item Έστω ότι η σειρά $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει. Τότε είναι 
-            άνω φραγμένη, δηλαδή 
-            \[
-                \exists M>0 : \sum_{n=1}^{N} b_{N} \leq M, \; \forall N \in \mathbb{N}
-                \Rightarrow \sum_{n=1}^{N} a_{N} \leq M, \; \forall N \in \mathbb{N}
-            \]
-            δηλαδή η $ \sum_{n=1}^{\infty} a_{n} $ είναι άνω φραγμένη. Είναι όμως και 
-            σειρά θετικών όρων, οπότε από το προηγούμενο θεώρημα, συγκλίνει.
 
-        \item Έστω $ M >0 $. Αφού η $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει στο $ 
-            + \infty, \; \exists N_{0} \in \mathbb{N} \; : \; \sum_{n=1}^{N} a_{n} 
-            \geq M, \; \forall N \in \mathbb{N} $. 
-            Όμως τότε $ \sum_{n=1}^{N} b_{n} \geq M, \; \forall n \in \mathbb{N} $, 
-            δηλαδή και η σειρά $ \sum_{n=1}^{\infty} b_{n} $ αποκλίνει στο $ 
-            + \infty$.
-    \end{enumerate}
-\end{proof}
-
-\myprop{Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{2}} $ συγκλίνει.}
+\begin{mybox3}
+\begin{prop}
+Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{2}} $ συγκλίνει.
+\end{prop}
+\end{mybox3}
 
 \begin{proof}
 \item {}
@@ -655,7 +657,9 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
 \end{examples}
 
 \subsection{Κριτήριο Ορίου}
-\mythm{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και $ {(b_{n})}_{n \in \mathbb{N}} $ δύο 
+\begin{mybox2}
+\begin{thm}
+Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ και $ {(b_{n})}_{n \in \mathbb{N}} $ δύο 
     ακολουθίες θετικών αριθμών, τέτοιες ώστε $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}}
     \in \mathbb{R} $, τότε: 
     \begin{enumerate}[i)]
@@ -663,7 +667,9 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
             \sum_{n=1}^{\infty} a_{n} $ συγκλίνει.
         \item $ \sum_{n=1}^{\infty} a_{n} $ αποκλίνει (στο $+ \infty$) $ \Rightarrow 
             \sum_{n=1}^{\infty} b_{n} $ αποκλίνει (στο $+ \infty$).
-\end{enumerate}}
+\end{enumerate}
+\end{thm}
+\end{mybox2}
 
 \begin{proof}
 \item {}
@@ -672,7 +678,7 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \[
         \exists M>0 \; : \; \frac{a_{n}}{b_{n}} \leq M, \; \forall n \in \mathbb{N} 
     \] 
-    Οπότε $ 0 \leq a_{n} \leq b_{n}, \; \forall n \in \mathbb{N} $.
+    Οπότε $ 0 \leq a_{n} \leq M\cdot b_{n}, \; \forall n \in \mathbb{N} $.
     \begin{enumerate}[i)]
         \item Η σειρά $ \sum_{n=1}^{\infty} b_{n} $ συγκλίνει, άρα και η σειρά 
             $ \sum_{n=1}^{\infty} M\cdot b_{n} $ συγκλίνει, οπότε από το κριτήριο 
@@ -692,8 +698,8 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     συγκλίνει αν και μόνον αν η σειρά $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει.
 \end{cor}
 \begin{proof}
-    Επειδή $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}} \neq 0 \Rightarrow \exists 
-    \lim_{n \to \infty} \frac{b_{n}}{a_{n}}$, οπότε από την προηγούμενη πρόταση 
+    Επειδή $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}} \neq 0 \Rightarrow \lim_{n \to
+    \infty} \frac{b_{n}}{a_{n}} \in \mathbb{R} $, οπότε από την προηγούμενη πρόταση 
     έχουμε το ζητούμενο.
 \end{proof}
 
@@ -744,15 +750,29 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{enumerate}
 \end{examples}
 
-    \myprop{$ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
-        $ \Rightarrow \lim_{n \to \infty} a_{n} = 0 $.}
+\begin{mybox3}
+  \begin{prop}
+    $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
+    $ \Rightarrow \lim_{n \to \infty} a_{n} = 0 $.
+  \end{prop}
+\end{mybox3}
 
 \begin{proof}
 \item {}
-    Θέτουμε $ S_{N} = \sum_{n=1}^{N} a_{n}, \; \forall N \in \mathbb{N} $. Γνωρίζουμε 
-    ότι η $ {(S_{n})}_{n \in \mathbb{N}} $ συγκλίνει, άρα έστω 
-    $ \lim_{n \to \infty} S_{N} = S$.
-    Τότε $ a_{N} = S_{N}-S_{N-1} \xrightarrow{N \to \infty} S-S = 0 $.
+  Έστω ότι $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει. Τότε η ακολουθία $ (S_{n})_{n \in
+  \mathbb{N}} $ συγκλίνει, και έστω ότι $ \lim_{n \to \infty} S_{n}=S $. Θα δείξουμε ότι
+  $ \lim_{n \to \infty} a_{n}=0 $. Έστω $ \varepsilon >0 $. Επειδή $ \lim_{n \to \infty}
+  S_{n} = S $, έχουμε ότι για $ \frac{\varepsilon}{2} >0, \; \exists n_{1} \in \mathbb{N}
+  \; : \; \forall n \geq n_{1} \quad \abs{S_{n}-S} < \frac{\varepsilon}{2}$. Άρα 
+  για το $ \varepsilon >0, \; \exists n_{0} = n_{1}+1 \in \mathbb{N} \; : \; \forall n
+  \geq n_{0} $ να έχουμε:
+  \begin{align*}
+    \abs{a_{n} - 0} = \abs{a_{n}} = \abs{a_{1}+ a_{2}+ 
+    \cdots + a_{n} - (a_{1}+ a_{2}+ \cdots + a_{n-1})} 
+    &= \abs{S_{n}-S_{n-1}} = \abs{S_{n}-S+S-S_{n-1}} \\ 
+    &\leq \abs{S_{n}-S} + \abs{S_{n-1}-S} < 
+    \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon 
+  \end{align*} 
 \end{proof}
 
 \begin{cor}[Αντιθετοαντίστροφο]
@@ -789,12 +809,16 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
 
 \section{Απόλυτη Σύγκλιση}
 
-    \myprop{$ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει 
-    $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $ συγκλίνει }
+\begin{mybox3}
+\begin{prop}
+    $ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει 
+    $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
+  \end{prop}
+\end{mybox3}
 
 \begin{proof}
-    $ \abs{a_{n}} $ συγκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 2 \abs{a_{n}} $ 
-    συγκλίνει. Ισχύουν
+  $ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει $ \Rightarrow \sum_{n=1}^{\infty} 2 
+  \abs{a_{n}} $ συγκλίνει. Ισχύει
     \[
         0 \leq a_{n} + \abs{a_{n}} \leq 2 \abs{a_{n}}, \; \forall n \in \mathbb{N} 
     \] 
@@ -824,61 +848,22 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
     \end{enumerate}
 \end{examples}
 
-\section{Κριτήριο Συμπύκνωσης του Cauchy}
-
-\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ φθίνουσα ακολουθία θετικών όρων με 
-    $ \lim_{n \to \infty} a_{n} =0 $. Τότε
-    \[
-        \sum_{n=1}^{\infty} a_{n} \; \text{συγκλίνει} \; 
-        \Leftrightarrow \sum_{n=1}^{\infty} 2^{n} a_{n} \; \text{συγκλίνει}
-\]}
-
-\begin{proof}
-    Χωρίς Απόδειξη
-\end{proof}
-
-\begin{cor}
-    Η σειρά $ \sum_{n=1}^{\infty} \frac{1}{n^{\rho}} $ συγκλίνει $ \Leftrightarrow 
-    \rho > 1$.
-\end{cor}
-\begin{proof}
-\item {}
-    Θέτουμε $ a_{n}= \frac{1}{n^{\rho}}, \; \forall n \in \mathbb{N} $. Η 
-    ακολουϑία είναι φθίνουσα και θετική (από γνωστό λήμμα). Οπότε σύμφωνα 
-    με την προηγούμενη πρόταση έχουμε
-    \[
-        \sum_{n=1}^{\infty} 2^{n} a_{2^{n}} = \sum_{n=1}^{\infty} 2 ^{n} 
-        \frac{1}{(2^{n})^{\rho}} = \sum_{n=1}^{\infty} \left(\frac{1}{2^{\rho -1}} 
-        \right)^{n}
-    \] 
-    \begin{myitemize}
-    \item Αν $ \rho >1 \Rightarrow \rho -1 >0 \Rightarrow 2^{\rho -1} > 2^{0} 
-        \Rightarrow 2^{\rho -1} > 1 \Rightarrow \frac{1}{2^{\rho -1}} < 1 $, οπότε
-        η σειρά $ \sum_{n=1}^{\infty} \left(\frac{1}{2^{\rho -1}} \right)^{n} $ 
-        συγκλίνει ως γεωμετρική με λόγο $ \frac{1}{2^{\rho -1}} < 1 $
-    \item Αν $ \rho \leq 1 \Rightarrow \rho -1 \leq 0 \Rightarrow 2^{\rho -1} \leq 
-        2^{0} \Rightarrow 2^{\rho -1} \leq 1 \Rightarrow \frac{1}{2^{\rho -1}} \geq 1 $
-        Από αυτό το γεγονός έχουμε ότι η ακολουθία 
-        $ \lim_{n \to \infty} \left(\frac{1}{2^{\rho -1}}\right)^{n} $ 
-        δεν συγκλίνει στο 0, οπότε η αρχική σειρά δεν συγκλίνει. Και επειδή είναι 
-        σειρά θετικών όρων, έχουμε ότι αποκλίνει στο $ + \infty $.
-    \end{myitemize}
-\end{proof}
 
 \section{Κριτήριο Λόγου}
 
-\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το $ 
+\begin{mybox3}
+\begin{prop}
+Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το $ 
     \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} $. Τότε 
     \begin{enumerate}[i)]
         \item $ \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} <1 \Rightarrow 
             \sum_{n=1}^{\infty} a_{n}$ συγκλίνει 
         \item $ \lim_{n \to \infty} \frac{\abs{a_{n+1}}}{\abs{a_{n}}} >1 \Rightarrow 
             \sum_{n=1}^{\infty} a_{n}$ αποκλίνει
-\end{enumerate}}
+\end{enumerate}
+\end{prop}
+\end{mybox3}
 
-\begin{proof}
-    Χωρίς Απόδειξη
-\end{proof}
 
 \begin{examples}
 \item {}
@@ -892,17 +877,17 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
             επομένως από Κριτήριο Λόγου η σειρά $ \sum_{n=1}^{\infty} a_{n} = 
             \sum_{n=1}^{\infty} \frac{1}{n!}$ συγκλίνει.
 
-        \item Η σειρά $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει.
-            \[
-                \abs{\frac{a_{n+1}}{a_{n}}} = \frac{\abs{\frac{9^{n+1}}{(-2)^{n+1}\cdot
-                (n+1)}}}{\abs{\frac{9^{n}}{(-2)^{n}\cdot n}}} = 
-                \frac{\frac{9^{n+1}}{2^{n+1}\cdot (n+1)}}{\frac{9^{n}}{2^{n}\cdot n}} 
-                = \frac{9^{n}\cdot 9}{9^{n}} \cdot \frac{2^{n}}{2^{n}\cdot 2}\cdot 
-                \frac{n}{n+1} = \frac{9}{2} \cdot \frac{n}{n+1} \xrightarrow{n \to 
-                \infty} \frac{9}{2} \cdot 1 = \frac{9}{2}> 1
-            \] 
-            επομένως από Κριτήριο Λόγου η σειρά 
-            $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει
+        % \item Η σειρά $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει.
+        %     \[
+        %         \abs{\frac{a_{n+1}}{a_{n}}} = \frac{\abs{\frac{9^{n+1}}{(-2)^{n+1}\cdot
+        %         (n+1)}}}{\abs{\frac{9^{n}}{(-2)^{n}\cdot n}}} = 
+        %         \frac{\frac{9^{n+1}}{2^{n+1}\cdot (n+1)}}{\frac{9^{n}}{2^{n}\cdot n}} 
+        %         = \frac{9^{n}\cdot 9}{9^{n}} \cdot \frac{2^{n}}{2^{n}\cdot 2}\cdot 
+        %         \frac{n}{n+1} = \frac{9}{2} \cdot \frac{n}{n+1} \xrightarrow{n \to 
+        %         \infty} \frac{9}{2} \cdot 1 = \frac{9}{2}> 1
+        %     \] 
+        %     επομένως από Κριτήριο Λόγου η σειρά 
+        %     $ \sum_{n=1}^{\infty} \frac{9^{n}}{(-2)^{n}\cdot n} $ αποκλίνει
 
         \item Η σειρά $ \sum_{n=1}^{\infty} \frac{n!}{10^{n}} $ συγκλίνει.
             \[
@@ -932,14 +917,18 @@ $x$ λέγεται \textcolor{Col1}{λόγος} της.
 
 \section{Κριτήριο Ρίζας}
 
-\myprop{Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το 
+\begin{mybox3}
+\begin{prop}
+Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ ακολουθία αριθμών ώστε να υπάρχει το 
     $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} $. Τότε
     \begin{enumerate}[i)]
         \item $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} < 1 \Rightarrow 
             \sum_{n=1}^{\infty} a_{n}$ συγκλίνει
         \item $ \lim_{n \to \infty} \sqrt[n]{\abs{a_{n}}} > 1 \Rightarrow 
             \sum_{n=1}^{\infty} a_{n}$ αποκλίνει
-\end{enumerate}}
+\end{enumerate}
+\end{prop}
+\end{mybox3}
 
 \begin{examples}
 \item {}

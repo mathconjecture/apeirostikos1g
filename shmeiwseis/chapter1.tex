@@ -4,7 +4,7 @@
 \input{myboxes.tex}
 
 
-\pagestyle{vangelis}
+\pagestyle{askhseis}
 
  
 \begin{document}
@@ -158,31 +158,6 @@
   \end{enumerate}
 \end{prop}
 \end{mybox3}
-%\begin{proof}
-%  %todo να ξαναγραψω πιο απλα αυτές τις αποδείξεις (δες λυμ. ασκ Spivak)
-%\item {}
-%  \begin{enumerate}[(i)]
-%    \item Έχουμε ότι 
-%      \[ 
-%        a \leq \abs{a} \Rightarrow - \abs{a} \leq a \leq \abs{a}
-%      \] 
-%      \[
-%        b \leq \abs{b} \Rightarrow - \abs{b} \leq b \leq \abs{b} 
-%      \] 
-%      Με πρόσθεση, προκύπτει
-%      \[
-%        - (\abs{a} + \abs{b} ) \leq a + b \leq \abs{a} + \abs{b} 
-%      \] 
-%      Οπότε από την πρόταση~\ref{prop:absprop1}, ισχύει:
-%      $ \abs{a+b} \leq \abs{a} + \abs{b} $
-%    \item Θέτω $ x = a+b $ και $ y = -b $. Για τους $ x,y $ από το $ \rm{i}) $ 
-%      ερώτημα, έχουμε:
-%      \begin{equation}\label{eq:absnew1}
-%        \abs{x+y} \leq \abs{x} + \abs{y} \Rightarrow \abs{a} \leq 
-%        \abs{a+b} + \abs{b} \Rightarrow \abs{a+b} \geq \abs{a} - \abs{b}
-%      \end{equation} 
-%  \end{enumerate} 
-%\end{proof} 
 \begin{proof}
 \item {}
   \begin{enumerate}[(i)]
@@ -255,7 +230,7 @@
   του $A$, γιατί $ 0 \in A $ και $ a \geq 0, \forall a \in A $.
 \end{example}
 
-%todo Να γράψω και άλλα παραδείγματα
+%todo Να γράψω και άλλα παραδείγματα με max και min
 \begin{example}
   Το σύνολο $ A=(- \infty, 3] $ έχει μέγιστο στοιχείο το 3, ενώ προφανώς δεν έχει 
   ελάχιστο στοιχείο.
@@ -820,7 +795,7 @@
   \begin{enumerate}[i)]
     \item Υπάρχουν τα $ \sup {(A \cap B)} $ και $ \inf {(A \cap B)} $
     \item $ \sup {(A \cap B)} \leq \min \{ \sup A, \sup B \} $
-    \item $ \inf {(A \cap B)} \geq \max \{ \sup A, \sup B \} $
+    \item $ \inf {(A \cap B)} \geq \max \{ \inf A, \inf B \} $
   \end{enumerate}
 \end{prop}
 \end{mybox3}
@@ -977,9 +952,10 @@
 
 \begin{mybox3}
   \begin{prop}
-    Έστω $ A,B $ μη κενά και άνω φραγμένα σύνολα θετικών, πραγματικών αριθμών και έστω 
-    $ A \cdot B = \{ a\cdot b \; : \; a \in A, b \in B \} $. Τότε υπάρχει το $ \sup {(A
-    \cdot B)} $ και ισχύει ότι $ \sup {(A\cdot B)} = \sup A \cdot \sup B $.
+    Έστω $ A,B $ μη κενά και άνω φραγμένα σύνολα \textbf{θετικών}, πραγματικών αριθμών 
+    και έστω $ A \cdot B = \{ a\cdot b \; : \; a \in A, b \in B \} $. 
+    Τότε υπάρχει το $ \sup {(A \cdot B)} $ και ισχύει ότι $ \sup {(A\cdot B)} = 
+    \sup A \cdot \sup B $.
   \end{prop}
 \end{mybox3}
 \begin{proof}

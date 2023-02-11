@@ -1,0 +1,122 @@
+\input{preamble_typ.tex}
+\input{definitions_typ.tex}
+\input{tikz.tex}
+
+
+\pagestyle{vangelis}
+
+\begin{document}
+
+\chapter{Σειρές}
+
+\section{Βασικές Προτάσεις}
+\twocolumnside{
+  \begin{myitemize}[itemsep=.5\parskip]
+    \item $ \sum_{n= n_{0}}^{\infty} a_{n} $ συγκλίνει $ \Leftrightarrow
+      \sum_{n=n_{1}}^{\infty} a_{n} $ συγκλίνει, $ \; \forall n_{1} > n_{0} $
+    \item $ \sum_{n= n_{0}}^{\infty} a_{n} = \pm\infty $ $ \Leftrightarrow
+      \sum_{n=n_{1}}^{\infty} a_{n} = \pm\infty $, $ \; \forall n_{1} > n_{0} $
+    \item $ a_{n} \geq 0, \; \forall n \in \mathbb{N} \Rightarrow \sum_{n=1}^{\infty}
+      a_{n} = S \in \mathbb{R_{+}} \; \text{ή} \; \sum_{n=1}^{\infty} a_{n} = + \infty 
+      $
+  \end{myitemize}
+  }{
+  \begin{myitemize}[itemsep=.5\parskip]
+    \item $ \sum_{n= n_{0}}^{\infty} a_{n} $ συγκλίνει $ \Rightarrow \lim_{n \to \infty}
+      a_{n} = 0 $
+    \item $ \sum_{n=1}^{\infty} a_{n} = a, \; \sum_{n=1}^{\infty} b_{n} = b 
+      \Rightarrow \sum_{n=1}^{\infty} (ka_{n}+ \lambda b_{n}) = ka + \lambda b $
+    \item $ \sum_{n=1}^{\infty} a_{n} $ συγκλ. και $ \sum_{n=1}^{\infty} b_{n} $ 
+      αποκλ.  $ \Rightarrow \sum_{n=1}^{\infty} (a_{n}+ b_{n}) $ αποκλ.
+  \end{myitemize}
+}
+
+\section{Κριτήρια Σύγκλισης}
+
+\subsection{Κριτήρια Σειρών Θετικών Όρων}
+
+\twocolumnsides{
+  \subsection{Κριτήριο Σύγκρισης}
+  \begin{myitemize}
+    \item $ a_{n} \leq b_{n}, \; \forall n \geq n_{0} \quad \text{και} \quad
+      \sum_{n=1}^{\infty} b_{n} $ συγκλ. $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $
+      συγκλ.
+    \item $ a_{n} \geq b_{n}, \; \forall n \geq n_{0} \quad \text{και} \quad
+      \sum_{n=1}^{\infty} b_{n} $ αποκλ. $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $
+      αποκλ.
+  \end{myitemize}
+  }{
+  \subsection{Γενικευμένη Αρμονική}
+  \centering
+  $ \sum_{n=1}^{\infty} \frac{1}{n^{p}} $ συγκλίνει $ \Leftrightarrow p > 1 $
+  \subsection{Γεωμετρική Σειρά}
+  \centering
+  $ \sum_{n=1}^{\infty} \lambda ^{n} $ συγκλίνει $ \Leftrightarrow \abs{\lambda} < 1 $
+}
+
+
+\twocolumnsides{
+  \subsection{Κριτήριο Λόγου (D' Alembert)}
+    Αν $ \lim_{n \to \infty} \frac{a_{n+1}}{a_{n}} = l \geq 0 $, τότε
+      $ 
+      \begin{cases}
+        l < 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{συγκλίνει} \\
+        l > 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{αποκλίνει} \\
+        l = 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{δεν ξέρουμε} \\
+      \end{cases}$
+  }{
+  \subsection{Κριτήριο Ρίζας (Cauchy)}
+    Αν $ \lim_{n \to \infty} \sqrt[n]{a_{n}} = l \geq 0 $, τότε
+      $ 
+      \begin{cases}
+        l < 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{συγκλίνει} \\
+        l > 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{αποκλίνει} \\
+        l = 1 \Rightarrow \sum_{n=1}^{\infty} a_{n} & \text{δεν ξέρουμε} \\
+      \end{cases}$
+}
+
+
+\subsection{Κριτήριο Ορίου}
+Έστω $ {(a_{n})}_{n \in \mathbb{N}} \geq 0, \; \forall n \in \mathbb{N} $ και $
+{(b_{n})}_{n \in \mathbb{N}} > 0, \; \forall n \in \mathbb{N} $ 
+και $ \lim_{n \to \infty} \frac{a_{n}}{b_{n}} = k  $, τότε: 
+\begin{myitemize}
+  \item Αν $ \textcolor{Col1}{0 < k < + \infty} $, τότε οι σειρές $ \sum_{n=1}^{\infty} a_{n} $ και $
+    \sum_{n=1}^{\infty} b_{n} $ παρουσιάζουν \textbf{ίδια συμπεριφορά} ως προς τη σύγκλιση
+  \item Αν $ \textcolor{Col1}{k=0} $, τότε $\sum_{n=1}^{\infty} b_{n} $ συγκλίνει 
+    $ \Rightarrow  \sum_{n=1}^{\infty} a_{n} $ συγκλίνει, ή $ \sum_{n=1}^{\infty} a_{n} $
+    αποκλίνει $ \Rightarrow \sum_{n=1}^{\infty} b_{n} $ αποκλίνει
+  \item Αν $ \textcolor{Col1}{k=+ \infty} $, τότε $\sum_{n=1}^{\infty} a_{n} $ συγκλίνει 
+    $ \Rightarrow  \sum_{n=1}^{\infty} b_{n} $ συγκλίνει, ή $ \sum_{n=1}^{\infty} b_{n} $
+    αποκλίνει $ \Rightarrow \sum_{n=1}^{\infty} a_{n} $ αποκλίνει
+\end{myitemize}
+
+\section{Κριτήριο Leibniz (για Εναλλάσσουσες Σειρές)}
+
+Έστω $ \sum_{n=1}^{\infty} (-1)^{n+1} a_{n} $ ή $ \sum_{n=1}^{\infty} (-1)^{n} a_{n} $ 
+σειρές, με $ a_{n} > 0, \; \forall n \in \mathbb{N} $. Τότε, αν 
+
+\parbox{5cm}{
+  \begin{myitemize}
+    \item $ (a_{n})_{n \in \mathbb{N}} $ \textbf{φθίνουσα} ακολουθία \hfill \tikzmark{a}
+    \item $ \lim_{n \to \infty} a_{n} = 0 $ \hfill \tikzmark{b}
+  \end{myitemize}
+\mybrace{a}{b}[$ \sum_{n=1}^{\infty} (-1)^{n+1} a_{n} $ συγκλίνει]}
+
+
+\section{Απόλυτη Σύγκλιση}
+
+\begin{myitemize}
+  \item $ \sum_{n=1}^{\infty} \abs{a_{n}} $ συγκλίνει $ \Rightarrow \sum_{n=1}^{\infty}
+    a_{n} $ συγκλίνει \textcolor{Col1}{απόλυτα}
+  \item $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει και $ \sum_{n=1}^{\infty} \abs{a_{n}}
+    $ αποκλίνει, τότε λέμε $ \sum_{n=1}^{\infty} a_{n} $ συγκλίνει \textcolor{Col1}{υπό
+    συνθήκη} $ \left( \text{πχ. η εναλ. αρμονική} \sum_{n=1}^{\infty} (-1)^{n-1} \frac{1}{n}\right) $
+\end{myitemize}
+
+
+
+
+\end{document}
+
+

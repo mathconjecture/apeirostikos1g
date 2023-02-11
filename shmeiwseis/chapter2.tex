@@ -3,8 +3,15 @@
 \input{tikz.tex}
 \input{myboxes.tex}
 
+\newcommand{\twocolumnsidesss}[2]{\begin{minipage}[t]{0.49\linewidth}\raggedright
+        #1
+        \end{minipage}\hfill\begin{minipage}[t]{0.49\linewidth}\raggedright
+        #2
+    \end{minipage}
+}
 
-\pagestyle{vangelis}
+
+\pagestyle{askhseis}
 
 \zexternaldocument*{chapter1}
 
@@ -66,7 +73,7 @@
 \begin{rem}
 \item {}
   \begin{enumerate}[i)]
-    \item Ουσιαστικά οι ακολουθίες είναι \textbf{λίστες} πραγματικών αριθμών.
+    \item Ουσιαστικά οι ακολουθίες είναι άπειρες \textbf{λίστες} πραγματικών αριθμών.
     \item Η ακολουθία~\ref{ex:anadr}, όπου κάθε επόμενος όρος, ορίζεται με 
       τη βοήθεια του προηγούμενου, λέγεται
       \textcolor{Col1}{αναδρομική ακολουθία}.  Προτάσεις που αφορούν 
@@ -109,8 +116,8 @@
 
 \begin{mybox3}
   \begin{prop}\label{prop:apolfragm}
-    {$ (a_{n})_{n \in \mathbb{N}} $ φραγμένη $ \Leftrightarrow \exists M>0, 
-      \; M \in \mathbb{R} \; : \; \abs{a_{n}} \leq M, \; \forall n \in \mathbb{N} $ 
+    {$ (a_{n})_{n \in \mathbb{N}} $ φραγμένη $ \Leftrightarrow \exists M \in 
+      \mathbb{R}, \; M>0 \; : \; \abs{a_{n}} \leq M, \; \forall n \in \mathbb{N} $ 
     (\textbf{απολύτως φραγμένη}).}
   \end{prop}
 \end{mybox3}
@@ -361,9 +368,9 @@
   Αν μια ακολουθία $ (a_{n})_{n \in \mathbb{N}} $ \textbf{διατηρεί σταθερό πρόσημο}, 
   τότε έχουμε:
 
-  \twocolumnsidee{
+  \twocolumnsidesss{
     Αν $ a_{n}>0, \; \forall n \in \mathbb{N} $, τότε:
-    \begin{myitemize}
+    \begin{myitemize}[leftmargin=*]
       \item $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} \Rightarrow
         (a_{n})_{n \in \mathbb{N}} $ είναι \textcolor{Col1}{γνησίως αύξουσα}  
       \item $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} \Rightarrow 
@@ -375,7 +382,7 @@
     \end{myitemize}
     }{
     Αν $ a_{n}<0, \; \forall n \in \mathbb{N} $, τότε:
-    \begin{myitemize}
+    \begin{myitemize}[leftmargin=*]
       \item $ \frac{a_{n+1}}{a_{n}} > 1, \; \forall n \in \mathbb{N} \Rightarrow
         (a_{n})_{n \in \mathbb{N}} $ είναι \!\textcolor{Col1}{γνησίως φθίνουσα}  
       \item $ \frac{a_{n+1}}{a_{n}} < 1, \; \forall n \in \mathbb{N} \Rightarrow
@@ -621,7 +628,7 @@
 \begin{examples}
 \item {}
   \begin{enumerate}[i)]
-    \item $ \lim\limits_{n \to \infty} \frac{1}{n} = 0 $.
+    \item Να δείξετε ότι $ \lim\limits_{n \to \infty} \frac{1}{n} = 0 $.
       \begin{proof}
       \item {}
         \begin{description}
@@ -641,7 +648,7 @@
         \]
       \end{proof}
 
-    \item $ \lim\limits_{n \to \infty} \frac{1}{n^{4}} = 0 $. 
+    \item Να δείξετε ότι $ \lim\limits_{n \to \infty} \frac{1}{n^{4}} = 0 $. 
       \begin{proof}
       \item {}
         \begin{description}
@@ -666,7 +673,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0$.
+    \item Να δείξετε ότι $ \lim\limits_{n \to \infty} \frac{1}{\sqrt{n}} = 0$.
       \begin{proof}
       \item {}
         \begin{description}
@@ -694,7 +701,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim_{n \to \infty} \frac{n}{n+1} = 1$
+    \item Να δείξετε ότι $ \lim_{n \to \infty} \frac{n}{n+1} = 1$
 
       \begin{proof}
       \item {}
@@ -721,7 +728,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim_{n \to \infty} \frac{\sin{n}}{n} = 0 $
+    \item Να δείξετε ότι  $ \lim_{n \to \infty} \frac{\sin{n}}{n} = 0 $
 
       \begin{proof}
       \item {}
@@ -756,7 +763,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim_{n \to \infty} \frac{2n^{2}}{n^{2}+1} = 2 $.
+    \item Να δείξετε ότι $ \lim_{n \to \infty} \frac{2n^{2}}{n^{2}+1} = 2 $.
 
       \begin{proof}
       \item {}
@@ -791,7 +798,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim_{n \to \infty} \frac{n+1}{n^{2}} =0 $
+    \item Να δείξετε ότι $ \lim_{n \to \infty} \frac{n+1}{n^{2}} =0 $
 
       \begin{proof}
       \item {}
@@ -824,7 +831,7 @@
         \] 
       \end{proof}
 
-    \item $ \lim_{n \to \infty} (\sqrt{n+1} - \sqrt{n}) =0 $
+    \item Να δείξετε ότι $ \lim_{n \to \infty} (\sqrt{n+1} - \sqrt{n}) =0 $
       \begin{proof}
       \item {}
         \begin{description}
@@ -982,10 +989,10 @@
 \item {}
   \begin{enumerate}[i)] \label{rem:nonfragm}
     \item Προσοχή, το αντίστροφο της παραπάνω πρότασης, δεν ισχύει. Πράγματι, 
-      για την  ακολουθία $ a_{n} = (-1)^{n}, \; \forall n \in \mathbb{N} $ 
-      έχουμε ότι είναι φραγμένη, όχι όμως και συγκλίνουσα.
+      η ακολουθία $ a_{n} = (-1)^{n}, \; \forall n \in \mathbb{N} $ είναι φραγμένη, 
+      όχι όμως και συγκλίνουσα.
     \item \label{rem:nonfragm2}
-      Ενδιαφέρον έχει το αντιθετοαντίστροφο της παραπάνω πρότασης, που 
+      Ενδιαφέρον παρουσιάζει το \textbf{αντιθετοαντίστροφο} της παραπάνω πρότασης, που 
       λεέι ότι αν μια ακολουθία δεν είναι φραγμένη, τότε δεν συγκλίνει.
   \end{enumerate}
 \end{rem}
@@ -1057,8 +1064,8 @@
   \end{gather*} 
 \end{proof}
 
-%todo να γράψω (ίσως) πρόταση $ \lim_{n \to \infty} a_{n}=a \neq 0 \Rightarrow
-%\exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad a_{n} \neq 0 $.  
+% todo να γράψω (ίσως) πρόταση $ \lim_{n \to \infty} a_{n}=a \neq 0 \Rightarrow
+% \exists n_{0} \in \mathbb{N} \; : \; \forall n \geq n_{0} \quad a_{n} \neq 0 $.  
 
 \section{Ιδιότητες Ορίου Ακολουθίας}
 
@@ -1271,7 +1278,7 @@
       \left(\frac{n^{3}(5+ \frac{2}{n^{2}} + \frac{1}{n^{3}})}{n^{2}(2+ \frac{1}{n} +
         \frac{1}{n^{2}})}\right) = \lim_{n \to \infty} \left(n \cdot \frac{5 + 
       \frac{2}{n^{2}} + \frac{1}{n^{3}}}{2+ \frac{1}{n} + \frac{1}{n^{2}}}\right) = 
-      (+\infty)\cdot \frac{5+0+0}{2+0+0} = +\infty \cdot \frac{5}{2} = + \infty $
+      (+\infty)\cdot \frac{5+0+0}{2+0+0} = + \infty $
 
     \item $ \displaystyle
       \lim_{n \to \infty} \sqrt{\frac{n^{2}+n}{n^{2}+2n}} = \lim_{n \to \infty}
@@ -1331,7 +1338,7 @@
   Να δείξετε ότι $ \lim_{n \to \infty} \frac{(-1)^{n}}{n^{2}} = 0 $
   \begin{proof}
     Έχουμε ότι 
-    \flushleft\parbox[b]{9cm}{\begin{myitemize}
+    \flushleft\parbox[b]{9.5cm}{\begin{myitemize}
         \item η $ (\frac{1}{n})_{n \in \mathbb{N}} $ είναι μηδενική, γιατί 
           $ \lim_{n \to \infty} \frac{1}{n^{2}} = 0 $ \hfill \tikzmark{a}
         \item η $ \{ (-1)^{n} \}_{n \in \mathbb{N}} $ είναι φραγμένη, γιατί
@@ -1520,11 +1527,19 @@
 \end{example}
 \begin{proof}
   \item {}
+
     Εχουμε $ 3n-2>M \Leftrightarrow 3n >M+2 \Leftrightarrow n > \frac{M+2}{3} $.
 
     Έστω $ M > 0 $. Τότε $ \exists n_{0} \in \mathbb{N} $ με $ n_{0}> \frac{M+2}{3} $
-    (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $ να ισχύει $ n \geq n_{0} > 
-    \frac{M+2}{3} $, άρα και $ 3n-2>M $.
+    (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $ να ισχύει 
+
+    % $ n \geq n_{0} > \frac{M+2}{3} $, άρα και $ 3n-2>M $.
+
+   \[
+     a_{n}= 3n-2 \geq 3 n_{0}-2 > 3 \frac{M+2}{3} - 2 = M 
+    \]
+
+
 \end{proof}
 
 \begin{example}
@@ -1541,8 +1556,15 @@
   \eqref{eq:infexam2} αρκεί $ \frac{n}{3} > M \Leftrightarrow n > 3M $
 
   Έστω $ M > 0 $. Τότε $ \exists n_{0} \in \mathbb{N} $ με $ n_{0}> 3M $
-  (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $ να ισχύει $ n \geq n_{0} > 
-  3M $, άρα και $ \frac{n^{2}+2}{3n} > M $.
+  (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $
+
+  % $ να ισχύει $ n \geq n_{0} > 3M $, άρα και $ \frac{n^{2}+2}{3n} > M $.
+
+  \[
+    a_{n} = \frac{n^{2}+2}{3n} > \frac{n^{2}}{3n} = \frac{n}{3} \geq \frac{n_{0}}{3}
+    > \frac{3M}{3} = M
+   \] 
+
 \end{proof}
 
 \begin{mybox1}
@@ -1562,8 +1584,10 @@
   Έχουμε $ \frac{1-n}{4} < -M \Leftrightarrow 1-n<-4M \Leftrightarrow n>4M+1 $
 
   Έστω $ M>0 $. Τότε $ \exists n_{0} \in \mathbb{N} $ με $ n_{0} > 4M+1 $ (Αρχ. Ιδιοτ.) 
-  ώστε $ \forall n \geq n_{0} $ να ισχύει $ n > 4M+1 $, άρα και $ \frac{1-n}{4}
- < -M $.
+  ώστε $ \forall n \geq n_{0} $
+  \[
+    a_{n}= \frac{1-n}{4} \leq \frac{1- n_{0}}{4} < \frac{1-(4M+1)}{4} = -M 
+   \] 
 \end{proof}
 
 \begin{example}
@@ -1580,8 +1604,10 @@
   \sqrt{M} $
 
   Έστω $ M > 0 $. Τότε $ \exists n_{0} \in \mathbb{N} $ με $ n_{0}> \sqrt{M} $
-  (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $ να ισχύει $ n \geq n_{0} > 
-  \sqrt{M} $, άρα και $ -n^{2}-n-1 > -M $.
+  (Αρχ. Ιδιοτ.) ώστε $ \forall n \geq n_{0} $
+  \[
+    a_{n}= (-n^2-n-1) \leq -n^2 \leq - n_{0}^2 < -(\sqrt{M})^2 = -M
+  \] 
 \end{proof}
 
 
@@ -1644,6 +1670,7 @@
   \end{description}
 \end{proof}
 
+
 \begin{mybox2}
   \begin{thm}
     Έστω $ {(a_{n})}_{n \in \mathbb{N}} $ \textbf{φθίνουσα (ή γνησίως φθίνουσα)} 
@@ -1659,6 +1686,8 @@
 \begin{proof}
   Ομοίως %todo να γράψω την απόδειξη
 \end{proof}
+
+
 
 \begin{mybox3}
   \begin{prop}
